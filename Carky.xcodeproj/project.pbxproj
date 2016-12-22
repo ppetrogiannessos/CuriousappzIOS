@@ -1,0 +1,682 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FD511FF31E0BE9A500B12C7C /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = FD511FF21E0BE9A500B12C7C /* Utility.m */; };
+		FD511FF81E0BF3EF00B12C7C /* VerificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD511FF61E0BF3EF00B12C7C /* VerificationViewController.m */; };
+		FD511FF91E0BF3EF00B12C7C /* VerificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD511FF71E0BF3EF00B12C7C /* VerificationViewController.xib */; };
+		FD511FFC1E0BF4EE00B12C7C /* CustomTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = FD511FFB1E0BF4EE00B12C7C /* CustomTextField.m */; };
+		FD511FFF1E0BFD8C00B12C7C /* UIController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD511FFE1E0BFD8C00B12C7C /* UIController.m */; };
+		FD5120711E0C1BBA00B12C7C /* CarDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD51206F1E0C1BBA00B12C7C /* CarDetailsViewController.m */; };
+		FD5120721E0C1BBA00B12C7C /* CarDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD5120701E0C1BBA00B12C7C /* CarDetailsViewController.xib */; };
+		FD5120781E0C347200B12C7C /* NetworkHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5120751E0C347200B12C7C /* NetworkHandler.m */; };
+		FD5120791E0C347200B12C7C /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5120771E0C347200B12C7C /* Reachability.m */; };
+		FD51207D1E0C3DEF00B12C7C /* UploadCarAvtarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD51207B1E0C3DEF00B12C7C /* UploadCarAvtarViewController.m */; };
+		FD51207E1E0C3DEF00B12C7C /* UploadCarAvtarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD51207C1E0C3DEF00B12C7C /* UploadCarAvtarViewController.xib */; };
+		FD5120831E0C458900B12C7C /* TermsConditionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5120811E0C458900B12C7C /* TermsConditionViewController.m */; };
+		FD5120841E0C458900B12C7C /* TermsConditionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD5120821E0C458900B12C7C /* TermsConditionViewController.xib */; };
+		FDC62FE41E0B07CB002FF506 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC62FE31E0B07CB002FF506 /* main.m */; };
+		FDC62FE71E0B07CB002FF506 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC62FE61E0B07CB002FF506 /* AppDelegate.m */; };
+		FDC62FEA1E0B07CB002FF506 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC62FE91E0B07CB002FF506 /* ViewController.m */; };
+		FDC62FED1E0B07CB002FF506 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDC62FEB1E0B07CB002FF506 /* Main.storyboard */; };
+		FDC62FEF1E0B07CB002FF506 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDC62FEE1E0B07CB002FF506 /* Assets.xcassets */; };
+		FDC62FF21E0B07CC002FF506 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDC62FF01E0B07CC002FF506 /* LaunchScreen.storyboard */; };
+		FDC62FFD1E0B07CC002FF506 /* CarkyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC62FFC1E0B07CC002FF506 /* CarkyTests.m */; };
+		FDC630081E0B07CC002FF506 /* CarkyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC630071E0B07CC002FF506 /* CarkyUITests.m */; };
+		FDC630181E0B0AED002FF506 /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC630171E0B0AED002FF506 /* HeaderView.m */; };
+		FDC6301B1E0B13FD002FF506 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = FDC6301A1E0B13FD002FF506 /* home.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FDC62FF91E0B07CC002FF506 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FDC62FD71E0B07CA002FF506 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FDC62FDE1E0B07CB002FF506;
+			remoteInfo = Carky;
+		};
+		FDC630041E0B07CC002FF506 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FDC62FD71E0B07CA002FF506 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FDC62FDE1E0B07CB002FF506;
+			remoteInfo = Carky;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FD511FF11E0BE9A500B12C7C /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utility.h; path = Utility/Utility.h; sourceTree = "<group>"; };
+		FD511FF21E0BE9A500B12C7C /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Utility.m; path = Utility/Utility.m; sourceTree = "<group>"; };
+		FD511FF51E0BF3EF00B12C7C /* VerificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerificationViewController.h; sourceTree = "<group>"; };
+		FD511FF61E0BF3EF00B12C7C /* VerificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerificationViewController.m; sourceTree = "<group>"; };
+		FD511FF71E0BF3EF00B12C7C /* VerificationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VerificationViewController.xib; sourceTree = "<group>"; };
+		FD511FFA1E0BF4EE00B12C7C /* CustomTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomTextField.h; path = View/CustomTextField.h; sourceTree = "<group>"; };
+		FD511FFB1E0BF4EE00B12C7C /* CustomTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomTextField.m; path = View/CustomTextField.m; sourceTree = "<group>"; };
+		FD511FFD1E0BFD8C00B12C7C /* UIController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIController.h; path = Utility/UIController.h; sourceTree = "<group>"; };
+		FD511FFE1E0BFD8C00B12C7C /* UIController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIController.m; path = Utility/UIController.m; sourceTree = "<group>"; };
+		FD51206E1E0C1BBA00B12C7C /* CarDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CarDetailsViewController.h; path = CarDetails/CarDetailsViewController.h; sourceTree = "<group>"; };
+		FD51206F1E0C1BBA00B12C7C /* CarDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CarDetailsViewController.m; path = CarDetails/CarDetailsViewController.m; sourceTree = "<group>"; };
+		FD5120701E0C1BBA00B12C7C /* CarDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CarDetailsViewController.xib; path = CarDetails/CarDetailsViewController.xib; sourceTree = "<group>"; };
+		FD5120741E0C347200B12C7C /* NetworkHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkHandler.h; path = Utility/NetworkHandler/NetworkHandler.h; sourceTree = "<group>"; };
+		FD5120751E0C347200B12C7C /* NetworkHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkHandler.m; path = Utility/NetworkHandler/NetworkHandler.m; sourceTree = "<group>"; };
+		FD5120761E0C347200B12C7C /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = Utility/NetworkHandler/Reachability.h; sourceTree = "<group>"; };
+		FD5120771E0C347200B12C7C /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = Utility/NetworkHandler/Reachability.m; sourceTree = "<group>"; };
+		FD51207A1E0C3DEF00B12C7C /* UploadCarAvtarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UploadCarAvtarViewController.h; path = CarDetails/UploadCarAvtarViewController.h; sourceTree = "<group>"; };
+		FD51207B1E0C3DEF00B12C7C /* UploadCarAvtarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UploadCarAvtarViewController.m; path = CarDetails/UploadCarAvtarViewController.m; sourceTree = "<group>"; };
+		FD51207C1E0C3DEF00B12C7C /* UploadCarAvtarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UploadCarAvtarViewController.xib; path = CarDetails/UploadCarAvtarViewController.xib; sourceTree = "<group>"; };
+		FD5120801E0C458900B12C7C /* TermsConditionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TermsConditionViewController.h; path = TermsCondition/TermsConditionViewController.h; sourceTree = "<group>"; };
+		FD5120811E0C458900B12C7C /* TermsConditionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TermsConditionViewController.m; path = TermsCondition/TermsConditionViewController.m; sourceTree = "<group>"; };
+		FD5120821E0C458900B12C7C /* TermsConditionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TermsConditionViewController.xib; path = TermsCondition/TermsConditionViewController.xib; sourceTree = "<group>"; };
+		FDC62FDF1E0B07CB002FF506 /* Carky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carky.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDC62FE31E0B07CB002FF506 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FDC62FE51E0B07CB002FF506 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FDC62FE61E0B07CB002FF506 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FDC62FE81E0B07CB002FF506 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FDC62FE91E0B07CB002FF506 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FDC62FEC1E0B07CB002FF506 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FDC62FEE1E0B07CB002FF506 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FDC62FF11E0B07CC002FF506 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FDC62FF31E0B07CC002FF506 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDC62FF81E0B07CC002FF506 /* CarkyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarkyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDC62FFC1E0B07CC002FF506 /* CarkyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarkyTests.m; sourceTree = "<group>"; };
+		FDC62FFE1E0B07CC002FF506 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDC630031E0B07CC002FF506 /* CarkyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarkyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDC630071E0B07CC002FF506 /* CarkyUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarkyUITests.m; sourceTree = "<group>"; };
+		FDC630091E0B07CC002FF506 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDC630161E0B0AED002FF506 /* HeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HeaderView.h; path = View/HeaderView.h; sourceTree = "<group>"; };
+		FDC630171E0B0AED002FF506 /* HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HeaderView.m; path = View/HeaderView.m; sourceTree = "<group>"; };
+		FDC6301A1E0B13FD002FF506 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home.png; path = Images/home.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FDC62FDC1E0B07CB002FF506 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDC62FF51E0B07CC002FF506 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDC630001E0B07CC002FF506 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FD511FF01E0BE98B00B12C7C /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				FD5120731E0C345600B12C7C /* NetworkHandler */,
+				FD511FF11E0BE9A500B12C7C /* Utility.h */,
+				FD511FF21E0BE9A500B12C7C /* Utility.m */,
+				FD511FFD1E0BFD8C00B12C7C /* UIController.h */,
+				FD511FFE1E0BFD8C00B12C7C /* UIController.m */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		FD511FF41E0BF3B100B12C7C /* Verification */ = {
+			isa = PBXGroup;
+			children = (
+				FD511FF51E0BF3EF00B12C7C /* VerificationViewController.h */,
+				FD511FF61E0BF3EF00B12C7C /* VerificationViewController.m */,
+				FD511FF71E0BF3EF00B12C7C /* VerificationViewController.xib */,
+			);
+			name = Verification;
+			sourceTree = "<group>";
+		};
+		FD51206D1E0C1B9000B12C7C /* CarDetails */ = {
+			isa = PBXGroup;
+			children = (
+				FD51206E1E0C1BBA00B12C7C /* CarDetailsViewController.h */,
+				FD51206F1E0C1BBA00B12C7C /* CarDetailsViewController.m */,
+				FD5120701E0C1BBA00B12C7C /* CarDetailsViewController.xib */,
+				FD51207A1E0C3DEF00B12C7C /* UploadCarAvtarViewController.h */,
+				FD51207B1E0C3DEF00B12C7C /* UploadCarAvtarViewController.m */,
+				FD51207C1E0C3DEF00B12C7C /* UploadCarAvtarViewController.xib */,
+			);
+			name = CarDetails;
+			sourceTree = "<group>";
+		};
+		FD5120731E0C345600B12C7C /* NetworkHandler */ = {
+			isa = PBXGroup;
+			children = (
+				FD5120741E0C347200B12C7C /* NetworkHandler.h */,
+				FD5120751E0C347200B12C7C /* NetworkHandler.m */,
+				FD5120761E0C347200B12C7C /* Reachability.h */,
+				FD5120771E0C347200B12C7C /* Reachability.m */,
+			);
+			name = NetworkHandler;
+			sourceTree = "<group>";
+		};
+		FD51207F1E0C455400B12C7C /* Terms */ = {
+			isa = PBXGroup;
+			children = (
+				FD5120801E0C458900B12C7C /* TermsConditionViewController.h */,
+				FD5120811E0C458900B12C7C /* TermsConditionViewController.m */,
+				FD5120821E0C458900B12C7C /* TermsConditionViewController.xib */,
+			);
+			name = Terms;
+			sourceTree = "<group>";
+		};
+		FDC62FD61E0B07CA002FF506 = {
+			isa = PBXGroup;
+			children = (
+				FDC62FE11E0B07CB002FF506 /* Carky */,
+				FDC62FFB1E0B07CC002FF506 /* CarkyTests */,
+				FDC630061E0B07CC002FF506 /* CarkyUITests */,
+				FDC62FE01E0B07CB002FF506 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FDC62FE01E0B07CB002FF506 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FDC62FDF1E0B07CB002FF506 /* Carky.app */,
+				FDC62FF81E0B07CC002FF506 /* CarkyTests.xctest */,
+				FDC630031E0B07CC002FF506 /* CarkyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FDC62FE11E0B07CB002FF506 /* Carky */ = {
+			isa = PBXGroup;
+			children = (
+				FD51207F1E0C455400B12C7C /* Terms */,
+				FD51206D1E0C1B9000B12C7C /* CarDetails */,
+				FD511FF41E0BF3B100B12C7C /* Verification */,
+				FD511FF01E0BE98B00B12C7C /* Utility */,
+				FDC630151E0B0ACC002FF506 /* View */,
+				FDC62FE51E0B07CB002FF506 /* AppDelegate.h */,
+				FDC62FE61E0B07CB002FF506 /* AppDelegate.m */,
+				FDC62FE81E0B07CB002FF506 /* ViewController.h */,
+				FDC62FE91E0B07CB002FF506 /* ViewController.m */,
+				FDC62FEB1E0B07CB002FF506 /* Main.storyboard */,
+				FDC62FEE1E0B07CB002FF506 /* Assets.xcassets */,
+				FDC62FF01E0B07CC002FF506 /* LaunchScreen.storyboard */,
+				FDC62FF31E0B07CC002FF506 /* Info.plist */,
+				FDC62FE21E0B07CB002FF506 /* Supporting Files */,
+			);
+			path = Carky;
+			sourceTree = "<group>";
+		};
+		FDC62FE21E0B07CB002FF506 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FDC62FE31E0B07CB002FF506 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FDC62FFB1E0B07CC002FF506 /* CarkyTests */ = {
+			isa = PBXGroup;
+			children = (
+				FDC62FFC1E0B07CC002FF506 /* CarkyTests.m */,
+				FDC62FFE1E0B07CC002FF506 /* Info.plist */,
+			);
+			path = CarkyTests;
+			sourceTree = "<group>";
+		};
+		FDC630061E0B07CC002FF506 /* CarkyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FDC630071E0B07CC002FF506 /* CarkyUITests.m */,
+				FDC630091E0B07CC002FF506 /* Info.plist */,
+			);
+			path = CarkyUITests;
+			sourceTree = "<group>";
+		};
+		FDC630151E0B0ACC002FF506 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FDC630191E0B13DB002FF506 /* Images */,
+				FDC630161E0B0AED002FF506 /* HeaderView.h */,
+				FDC630171E0B0AED002FF506 /* HeaderView.m */,
+				FD511FFA1E0BF4EE00B12C7C /* CustomTextField.h */,
+				FD511FFB1E0BF4EE00B12C7C /* CustomTextField.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		FDC630191E0B13DB002FF506 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				FDC6301A1E0B13FD002FF506 /* home.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FDC62FDE1E0B07CB002FF506 /* Carky */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDC6300C1E0B07CC002FF506 /* Build configuration list for PBXNativeTarget "Carky" */;
+			buildPhases = (
+				FDC62FDB1E0B07CB002FF506 /* Sources */,
+				FDC62FDC1E0B07CB002FF506 /* Frameworks */,
+				FDC62FDD1E0B07CB002FF506 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Carky;
+			productName = Carky;
+			productReference = FDC62FDF1E0B07CB002FF506 /* Carky.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FDC62FF71E0B07CC002FF506 /* CarkyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDC6300F1E0B07CC002FF506 /* Build configuration list for PBXNativeTarget "CarkyTests" */;
+			buildPhases = (
+				FDC62FF41E0B07CC002FF506 /* Sources */,
+				FDC62FF51E0B07CC002FF506 /* Frameworks */,
+				FDC62FF61E0B07CC002FF506 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FDC62FFA1E0B07CC002FF506 /* PBXTargetDependency */,
+			);
+			name = CarkyTests;
+			productName = CarkyTests;
+			productReference = FDC62FF81E0B07CC002FF506 /* CarkyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FDC630021E0B07CC002FF506 /* CarkyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDC630121E0B07CC002FF506 /* Build configuration list for PBXNativeTarget "CarkyUITests" */;
+			buildPhases = (
+				FDC62FFF1E0B07CC002FF506 /* Sources */,
+				FDC630001E0B07CC002FF506 /* Frameworks */,
+				FDC630011E0B07CC002FF506 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FDC630051E0B07CC002FF506 /* PBXTargetDependency */,
+			);
+			name = CarkyUITests;
+			productName = CarkyUITests;
+			productReference = FDC630031E0B07CC002FF506 /* CarkyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FDC62FD71E0B07CA002FF506 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = CuriousAppz;
+				TargetAttributes = {
+					FDC62FDE1E0B07CB002FF506 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = L7YZFBS3EK;
+						ProvisioningStyle = Automatic;
+					};
+					FDC62FF71E0B07CC002FF506 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = L7YZFBS3EK;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FDC62FDE1E0B07CB002FF506;
+					};
+					FDC630021E0B07CC002FF506 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = L7YZFBS3EK;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FDC62FDE1E0B07CB002FF506;
+					};
+				};
+			};
+			buildConfigurationList = FDC62FDA1E0B07CA002FF506 /* Build configuration list for PBXProject "Carky" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FDC62FD61E0B07CA002FF506;
+			productRefGroup = FDC62FE01E0B07CB002FF506 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FDC62FDE1E0B07CB002FF506 /* Carky */,
+				FDC62FF71E0B07CC002FF506 /* CarkyTests */,
+				FDC630021E0B07CC002FF506 /* CarkyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FDC62FDD1E0B07CB002FF506 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD511FF91E0BF3EF00B12C7C /* VerificationViewController.xib in Resources */,
+				FDC6301B1E0B13FD002FF506 /* home.png in Resources */,
+				FD5120721E0C1BBA00B12C7C /* CarDetailsViewController.xib in Resources */,
+				FD51207E1E0C3DEF00B12C7C /* UploadCarAvtarViewController.xib in Resources */,
+				FD5120841E0C458900B12C7C /* TermsConditionViewController.xib in Resources */,
+				FDC62FF21E0B07CC002FF506 /* LaunchScreen.storyboard in Resources */,
+				FDC62FEF1E0B07CB002FF506 /* Assets.xcassets in Resources */,
+				FDC62FED1E0B07CB002FF506 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDC62FF61E0B07CC002FF506 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDC630011E0B07CC002FF506 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FDC62FDB1E0B07CB002FF506 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDC62FEA1E0B07CB002FF506 /* ViewController.m in Sources */,
+				FD51207D1E0C3DEF00B12C7C /* UploadCarAvtarViewController.m in Sources */,
+				FDC62FE71E0B07CB002FF506 /* AppDelegate.m in Sources */,
+				FD511FF31E0BE9A500B12C7C /* Utility.m in Sources */,
+				FD5120831E0C458900B12C7C /* TermsConditionViewController.m in Sources */,
+				FD5120791E0C347200B12C7C /* Reachability.m in Sources */,
+				FD511FFF1E0BFD8C00B12C7C /* UIController.m in Sources */,
+				FD511FF81E0BF3EF00B12C7C /* VerificationViewController.m in Sources */,
+				FD511FFC1E0BF4EE00B12C7C /* CustomTextField.m in Sources */,
+				FDC62FE41E0B07CB002FF506 /* main.m in Sources */,
+				FDC630181E0B0AED002FF506 /* HeaderView.m in Sources */,
+				FD5120711E0C1BBA00B12C7C /* CarDetailsViewController.m in Sources */,
+				FD5120781E0C347200B12C7C /* NetworkHandler.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDC62FF41E0B07CC002FF506 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDC62FFD1E0B07CC002FF506 /* CarkyTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDC62FFF1E0B07CC002FF506 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDC630081E0B07CC002FF506 /* CarkyUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FDC62FFA1E0B07CC002FF506 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FDC62FDE1E0B07CB002FF506 /* Carky */;
+			targetProxy = FDC62FF91E0B07CC002FF506 /* PBXContainerItemProxy */;
+		};
+		FDC630051E0B07CC002FF506 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FDC62FDE1E0B07CB002FF506 /* Carky */;
+			targetProxy = FDC630041E0B07CC002FF506 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FDC62FEB1E0B07CB002FF506 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FDC62FEC1E0B07CB002FF506 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FDC62FF01E0B07CC002FF506 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FDC62FF11E0B07CC002FF506 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FDC6300A1E0B07CC002FF506 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FDC6300B1E0B07CC002FF506 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FDC6300D1E0B07CC002FF506 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = L7YZFBS3EK;
+				INFOPLIST_FILE = Carky/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.curiousappz.Carky;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FDC6300E1E0B07CC002FF506 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = L7YZFBS3EK;
+				INFOPLIST_FILE = Carky/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.curiousappz.Carky;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FDC630101E0B07CC002FF506 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = L7YZFBS3EK;
+				INFOPLIST_FILE = CarkyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.curiousappz.CarkyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Carky.app/Carky";
+			};
+			name = Debug;
+		};
+		FDC630111E0B07CC002FF506 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = L7YZFBS3EK;
+				INFOPLIST_FILE = CarkyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.curiousappz.CarkyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Carky.app/Carky";
+			};
+			name = Release;
+		};
+		FDC630131E0B07CC002FF506 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = L7YZFBS3EK;
+				INFOPLIST_FILE = CarkyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.curiousappz.CarkyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Carky;
+			};
+			name = Debug;
+		};
+		FDC630141E0B07CC002FF506 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = L7YZFBS3EK;
+				INFOPLIST_FILE = CarkyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.curiousappz.CarkyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Carky;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FDC62FDA1E0B07CA002FF506 /* Build configuration list for PBXProject "Carky" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDC6300A1E0B07CC002FF506 /* Debug */,
+				FDC6300B1E0B07CC002FF506 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FDC6300C1E0B07CC002FF506 /* Build configuration list for PBXNativeTarget "Carky" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDC6300D1E0B07CC002FF506 /* Debug */,
+				FDC6300E1E0B07CC002FF506 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FDC6300F1E0B07CC002FF506 /* Build configuration list for PBXNativeTarget "CarkyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDC630101E0B07CC002FF506 /* Debug */,
+				FDC630111E0B07CC002FF506 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FDC630121E0B07CC002FF506 /* Build configuration list for PBXNativeTarget "CarkyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDC630131E0B07CC002FF506 /* Debug */,
+				FDC630141E0B07CC002FF506 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FDC62FD71E0B07CA002FF506 /* Project object */;
+}
