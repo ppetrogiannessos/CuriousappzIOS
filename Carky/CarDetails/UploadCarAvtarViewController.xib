@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -28,7 +27,7 @@
                     </constraints>
                 </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KdK-mZ-9gh">
-                    <rect key="frame" x="0.0" y="120" width="375" height="497"/>
+                    <rect key="frame" x="0.0" y="120" width="375" height="467"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H6i-7A-hd9">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
@@ -53,9 +52,12 @@
                                                 <constraint firstAttribute="height" constant="110" id="3Hd-Ya-Wrn"/>
                                                 <constraint firstAttribute="width" constant="125" id="QRR-0n-QbZ"/>
                                             </constraints>
-                                            <state key="normal" title="Side">
+                                            <state key="normal" backgroundImage="side.png">
                                                 <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="uploadButtonAction:" destination="-1" eventType="touchUpInside" id="uFo-eN-yAs"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1cw-LA-oO6">
                                             <rect key="frame" x="140" y="0.0" width="125" height="110"/>
@@ -64,9 +66,12 @@
                                                 <constraint firstAttribute="height" constant="110" id="Btu-h7-tkl"/>
                                                 <constraint firstAttribute="width" constant="125" id="Gqj-mJ-FPN"/>
                                             </constraints>
-                                            <state key="normal" title="Front Side">
+                                            <state key="normal" backgroundImage="FrontSide.png">
                                                 <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="uploadButtonAction:" destination="-1" eventType="touchUpInside" id="oFG-Y5-G2E"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOT-Wx-ZOQ">
                                             <rect key="frame" x="0.0" y="130" width="125" height="110"/>
@@ -75,9 +80,12 @@
                                                 <constraint firstAttribute="width" constant="125" id="FlT-0a-3xy"/>
                                                 <constraint firstAttribute="height" constant="110" id="QhP-eg-DaO"/>
                                             </constraints>
-                                            <state key="normal" title="Three quarters">
+                                            <state key="normal" backgroundImage="ThreeQuaters.png">
                                                 <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="uploadButtonAction:" destination="-1" eventType="touchUpInside" id="U0y-Pd-6Bz"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XGF-eB-jrT">
                                             <rect key="frame" x="140" y="130" width="125" height="110"/>
@@ -86,9 +94,12 @@
                                                 <constraint firstAttribute="height" constant="110" id="2xx-3O-BSP"/>
                                                 <constraint firstAttribute="width" constant="125" id="K2v-6G-9b6"/>
                                             </constraints>
-                                            <state key="normal" title="Interior">
+                                            <state key="normal" backgroundImage="Interior.png">
                                                 <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="uploadButtonAction:" destination="-1" eventType="touchUpInside" id="x29-20-t3M"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -134,23 +145,48 @@
                     <state key="normal" title="NEXT">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="nextButtonAction:" destination="-1" eventType="touchUpInside" id="z6E-E6-i1g"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rht-Zg-2je">
+                    <rect key="frame" x="305" y="587" width="50" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="E4b-wl-me8"/>
+                        <constraint firstAttribute="width" constant="50" id="r5w-H8-T7b"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                    <state key="normal" title="SKIP">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="skipButtonAction:" destination="-1" eventType="touchUpInside" id="kGt-sn-GDf"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="KdK-mZ-9gh" firstAttribute="top" secondItem="IF9-tR-aNP" secondAttribute="bottom" id="0gZ-iC-j54"/>
+                <constraint firstItem="Rht-Zg-2je" firstAttribute="top" secondItem="KdK-mZ-9gh" secondAttribute="bottom" id="7G5-dZ-ofK"/>
                 <constraint firstItem="H6i-7A-hd9" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="9i6-Vj-UF0"/>
-                <constraint firstAttribute="bottom" secondItem="KdK-mZ-9gh" secondAttribute="bottom" constant="50" id="Ake-kt-RLh"/>
+                <constraint firstAttribute="bottom" secondItem="KdK-mZ-9gh" secondAttribute="bottom" constant="80" id="Ake-kt-RLh"/>
                 <constraint firstAttribute="trailing" secondItem="xb5-ex-oJx" secondAttribute="trailing" id="MDV-5N-VDc"/>
                 <constraint firstAttribute="bottom" secondItem="xb5-ex-oJx" secondAttribute="bottom" id="P8F-0d-4mj"/>
                 <constraint firstItem="xb5-ex-oJx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="d3E-8d-N6F"/>
                 <constraint firstAttribute="trailing" secondItem="IF9-tR-aNP" secondAttribute="trailing" id="f6t-zE-mOU"/>
                 <constraint firstItem="IF9-tR-aNP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="haM-Xg-taV"/>
                 <constraint firstItem="IF9-tR-aNP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="jio-Ya-x4q"/>
+                <constraint firstAttribute="trailing" secondItem="Rht-Zg-2je" secondAttribute="trailing" constant="20" id="pmx-JL-62W"/>
                 <constraint firstItem="KdK-mZ-9gh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="rTH-tm-WKb"/>
                 <constraint firstAttribute="trailing" secondItem="KdK-mZ-9gh" secondAttribute="trailing" id="sWN-QN-kV4"/>
             </constraints>
             <point key="canvasLocation" x="74.5" y="121.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="FrontSide.png" width="278" height="245"/>
+        <image name="Interior.png" width="278" height="245"/>
+        <image name="ThreeQuaters.png" width="278" height="245"/>
+        <image name="side.png" width="278" height="245"/>
+    </resources>
 </document>

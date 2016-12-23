@@ -169,9 +169,8 @@
             
         }
     } withNetworkFailureBlock:^(NSString *message) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self displayAlertWithTitle:@"Error" withMessage:message];
-        });
+        [self hideActivityIndicator];
+        [self displayAlertWithTitle:@"No internet connection" withMessage:@"Please check internet connection and try again"];
     }];
 }
 #pragma mark -
@@ -184,7 +183,6 @@
         [alertController addAction:cancelAction];
         [self presentViewController:alertController animated:YES completion:nil];
     });
-    
 }
 #pragma mamrk -
 @end

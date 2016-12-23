@@ -10,4 +10,8 @@
 #import "HeaderView.h"
 @interface UploadCarAvtarViewController : UIViewController
 @property (nonatomic, weak) IBOutlet HeaderView *headerView;
+@property (nonatomic, weak) IBOutlet UIView *btnBackView;
+-(IBAction)uploadButtonAction:(UIButton *)sender;
+-(IBAction)skipButtonAction:(UIButton *)sender;
+-(IBAction)nextButtonAction:(UIButton *)sender;
 @end

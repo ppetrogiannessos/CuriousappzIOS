@@ -17,6 +17,7 @@
     CustomTextField *activeTxtFld;
 }
 @property (nonatomic, weak) IBOutlet HeaderView *headerView;
+@property (nonatomic, weak) IBOutlet UIView *backView;
 @property (nonatomic, weak) IBOutlet UIImageView *makeImageView;
 @property (nonatomic, weak) IBOutlet UIImageView *modelImageView;
 @property (nonatomic, weak) IBOutlet UIImageView *transmissionImageView;
@@ -34,7 +35,10 @@
 @property (nonatomic, weak) IBOutlet CustomTextField *registrationTxtFld;
 @property (nonatomic, weak) IBOutlet CustomTextField *kmTxtFld;
 @property (nonatomic, weak) IBOutlet CustomTextField *carAddressTxtFld;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *topLayoutConstraint;
 
-@property (nonatomic, strong) IBOutlet UIPickerView *pickerView;
+@property (nonatomic, strong)  UIPickerView *pickerView;
+@property (nonatomic, strong) UIDatePicker *yearPicker;
+@property (nonatomic, strong) IBOutlet UIToolbar *toolBar;
 - (IBAction)nextButtonAction:(UIButton *)sender;
 @end

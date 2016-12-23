@@ -60,14 +60,17 @@
     }
 }
 -(BOOL) textFieldShouldReturn:(UITextField *)textField{
-    [textField resignFirstResponder];
     if (textField.tag != 7) {
         UITextField *nextTxtFld = [self.scrollView viewWithTag:textField.tag+1];
-        [nextTxtFld becomeFirstResponder];
+        [self performSelector:@selector(respondToNextField:) withObject:nextTxtFld afterDelay:0.1];
+        return NO;
     }
+    [textField resignFirstResponder];
     return YES;
 }
-
+-(void)respondToNextField:(UITextField *)nextTxtFld{
+    [nextTxtFld becomeFirstResponder];
+}
 #pragma mark -
 -(void) addAccessoryViewtoTextField:(UITextField *)textField{
     if (!toolBar) {
@@ -121,9 +124,10 @@
 }
 #pragma mark - IBAction
 - (IBAction)nextButtonAction:(UIButton *)sender {
-        self.emailTxtFld.text = @"avinash@gmail.com";
-        self.passwordTxtFld.text = @"qwerty";
-        [self getAuthenticationToken:[[NetworkHandler alloc] init]];
+//        self.emailTxtFld.text = @"avinash@gmail.com";
+//        self.passwordTxtFld.text = @"qwerty";
+//        [self displayVerficationControllerWithCode:@""];
+//        //[self getAuthenticationToken:[[NetworkHandler alloc] init]];
         return;
     if (self.nameTxtFld.text.length<1 || self.surnameTxtFld.text.length<1 || self.addressTxtFld.text.length < 1 || self.emailTxtFld.text.length < 1 || self.passwordTxtFld.text.length < 1 || self.confirmPasswordTxtFld.text.length < 1 || self.mobileNumberTxtFld.text.length < 1) {
         [self displayAlertWithTitle:@"" withMessage:@"All fields are mandatory"];
@@ -188,8 +192,11 @@
                 NSString *accessToken = [NSString stringWithFormat:@"%@",response[@"access_token"]];
                 [[NSUserDefaults standardUserDefaults] setObject:accessToken forKey:KAppAuthenticationToken];
                 NSLog(@"access_token -  %@",accessToken);
-                [self displayVerficationControllerWithCode:@""];
-               // [self sendPhoneNumberVerificationRequest:networkHandler];
+//                dispatch_async(dispatch_get_main_queue(), ^{
+//                    [self displayVerficationControllerWithCode:@""];
+//                });
+                
+                [self sendPhoneNumberVerificationRequest:networkHandler];
             }
         }
         else{

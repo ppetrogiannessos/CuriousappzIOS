@@ -7,9 +7,13 @@
 //
 
 #import "TermsConditionViewController.h"
+#import "CAActivityIndicatorView.h"
+#import "NetworkHandler.h"
 
 @interface TermsConditionViewController ()
-
+{
+    CAActivityIndicatorView *caActivityIndicator;
+}
 @end
 
 @implementation TermsConditionViewController
@@ -34,6 +38,10 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillChangeFrameNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
 }
+-(void) viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self getTermsAndCondition];
+}
 /*
  #pragma mark - Navigation
  
@@ -43,6 +51,75 @@
  // Pass the selected object to the new view controller.
  }
  */
+#pragma mark -
+#pragma mark -
+-(void) displayActivityIndicator{
+    if (!caActivityIndicator) {
+        caActivityIndicator = [[CAActivityIndicatorView alloc] initWithFrame:self.navigationController.view.frame];
+    }
+    [self.navigationController.view addSubview:caActivityIndicator];
+    // [caActivityIndicator setMessageText:@"Exporting video"];
+    [caActivityIndicator displayActivityIndicatorView];
+}
+-(void) hideActivityIndicator{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [caActivityIndicator hideActivityIndicatorView];
+    });
+    
+}
+#pragma mark -
+-(void) getTermsAndCondition{
+    [self displayActivityIndicator];
+    NetworkHandler *networkHandler = [[NetworkHandler alloc] init];
+    [networkHandler makePostRequestWithUri:fetchTerms parameters:@{@"Culture": @"string"} withCompletion:^(id response, NSHTTPURLResponse *urlResponse, NSError *error) {
+        if (error) {
+            [self hideActivityIndicator];
+            [self displayAlertWithTitle:@"Error" withMessage:error.localizedDescription];
+            return ;
+        }
+        if (urlResponse.statusCode == 200) {
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self hideActivityIndicator];
+                if ([response isKindOfClass:[NSArray class]]){
+                    
+                }
+                else{
+                    [self displayAlertWithTitle:@"Error" withMessage:@"Please try again"];
+                }
+            });
+        }
+        else{
+            NSLog(@"Display error message");
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self hideActivityIndicator];
+                if([response isKindOfClass:[NSDictionary class]]){
+                    if (response[@"Message"]) {
+                        [self displayAlertWithTitle:@"Error" withMessage:response[@"Message"]];
+                    }
+                }
+                else{
+                    [self displayAlertWithTitle:@"Error" withMessage:@"Please try again"];
+                }
+            });
+        }
+    } withNetworkFailureBlock:^(NSString *message) {
+        [self displayAlertWithTitle:@"Error" withMessage:message];
+    }];
+}
+#pragma mark -
+-(void) displayAlertWithTitle:(NSString *)title withMessage:(NSString *)message{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            
+        }];
+        [alertController addAction:cancelAction];
+        [self presentViewController:alertController animated:YES completion:nil];
+    });
+    
+}
+#pragma mark -
 -(IBAction)checkMarkButtonAction:(CheckMarkButton *)sender{
     sender.isSelected = !sender.isSelected;
 }
