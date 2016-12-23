@@ -97,38 +97,6 @@
             endingLineNumber = "90"
             landmarkName = "-getAllCarType"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[CarDetailsViewController getAllCarType]"
-                  moduleName = "Carky"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/avinashkashyap/CAWorkspace/CuriousappzIOS/Carky/CarDetails/CarDetailsViewController.m"
-                  timestampString = "504221485.207478"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "90"
-                  endingLineNumber = "90"
-                  offsetFromSymbolStart = "132">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__41-[CarDetailsViewController getAllCarType]_block_invoke"
-                  moduleName = "Carky"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/avinashkashyap/CAWorkspace/CuriousappzIOS/Carky/CarDetails/CarDetailsViewController.m"
-                  timestampString = "504221485.209292"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "91"
-                  endingLineNumber = "91"
-                  offsetFromSymbolStart = "116">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -169,23 +137,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "323"
             endingLineNumber = "323"
-            landmarkName = "-makeRequestForAddCar:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Carky/CarDetails/CarDetailsViewController.m"
-            timestampString = "504221367.353401"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "327"
-            endingLineNumber = "327"
-            landmarkName = "-makeRequestForAddCar:"
+            landmarkName = "-getFilterModel:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

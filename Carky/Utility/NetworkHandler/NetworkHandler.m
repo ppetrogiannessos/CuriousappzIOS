@@ -127,4 +127,59 @@
     }];
     [task resume];
 }
+
+-(void)addUserPostWithNamewithCompletion:(CompletionBlock)completion
+{
+    NSArray *photo_name;
+   // RETRY_COUNT = 0;
+    NSError *error;
+    NSString *boundary = @"-------------------------0xKhTmLbOuNdArY";
+    NSString *urlStr =[NSString stringWithFormat:@"http://carky-app.azurewebsites.net/api/CarOwner/UploadCarPhotos?carId=1"];
+    //responseData = [[NSMutableData alloc] init];
+    //NSMutableDictionary *sendData = [[NSMutableDictionary alloc]init];
+    NSMutableURLRequest *request = [self makeHttpRequestWithUrl:@"/api/CarOwner/UploadCarPhotos?carId=1"];
+    request.HTTPMethod = @"POST";
+    NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@",boundary];
+    [request setValue:contentType forHTTPHeaderField: @"Content-Type"];
+    //[request setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:KAppAuthenticationToken]) {
+        [request setValue:[NSString stringWithFormat:@"Bearer %@",[[NSUserDefaults standardUserDefaults] objectForKey:KAppAuthenticationToken]] forHTTPHeaderField:@"Authorization"];
+    }
+   
+    // set Content-Type in HTTP header
+    NSMutableData *body = [NSMutableData data];
+    NSArray *imageNameArray = @[@"sidepic",@"frontpic",@"outsidepic",@"insidepic"];
+    UIImage *image = [UIImage imageNamed:@"side"];
+    UIImage *image1 = [UIImage imageNamed:@"side"];
+    UIImage *image2 = [UIImage imageNamed:@"side"];
+    UIImage *image3 = [UIImage imageNamed:@"side"];
+    photo_name = @[image,image1,image2,image3];
+    for (int i=0; i<photo_name.count; i++)
+    {
+        NSData *imageData = UIImageJPEGRepresentation([photo_name objectAtIndex:i],1);
+        
+        if (imageData)
+        {
+            [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+            
+            [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"; filename=\"%@\"\r\n",[imageNameArray objectAtIndex:i],[NSString stringWithFormat:@"%d%@",i,@"image.png"]] dataUsingEncoding:NSUTF8StringEncoding]];
+            [body appendData:[@"Content-Type: image/png\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+            [body appendData:imageData];
+            [body appendData:[[NSString stringWithFormat:@"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+        }
+    }
+    
+   // [body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    //NSLog(@"request %@",sendData);
+    //NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[body length]];
+    [request setHTTPMethod:@"POST"];
+   // [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+   // [request setValue:[NSString stringWithFormat:@"multipart/form-data; charset=utf-8; boundary=%@", boundary] forHTTPHeaderField:@"Content-Type"];
+   // NSData *postdata = [NSJSONSerialization dataWithJSONObject:postDict options:NSJSONWritingPrettyPrinted error:&error];
+    [request setHTTPBody:body];
+    [self httpConnectionWithRequest:request withCompletion:completion];
+   // conn=[[NSURLConnection alloc] initWithRequest:request delegate:self];
+    //conn = [NSURLConnection connectionWithRequest:request delegate:self];
+    
+}
 @end
