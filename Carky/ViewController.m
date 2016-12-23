@@ -124,7 +124,6 @@
         self.emailTxtFld.text = @"avinash@gmail.com";
         self.passwordTxtFld.text = @"qwerty";
         [self getAuthenticationToken:[[NetworkHandler alloc] init]];
-    //[self displayVerficationControllerWithCode:@""];
         return;
     if (self.nameTxtFld.text.length<1 || self.surnameTxtFld.text.length<1 || self.addressTxtFld.text.length < 1 || self.emailTxtFld.text.length < 1 || self.passwordTxtFld.text.length < 1 || self.confirmPasswordTxtFld.text.length < 1 || self.mobileNumberTxtFld.text.length < 1) {
         [self displayAlertWithTitle:@"" withMessage:@"All fields are mandatory"];
@@ -189,7 +188,8 @@
                 NSString *accessToken = [NSString stringWithFormat:@"%@",response[@"access_token"]];
                 [[NSUserDefaults standardUserDefaults] setObject:accessToken forKey:KAppAuthenticationToken];
                 NSLog(@"access_token -  %@",accessToken);
-                [self sendPhoneNumberVerificationRequest:networkHandler];
+                [self displayVerficationControllerWithCode:@""];
+               // [self sendPhoneNumberVerificationRequest:networkHandler];
             }
         }
         else{

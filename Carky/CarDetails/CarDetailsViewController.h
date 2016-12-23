@@ -8,7 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "HeaderView.h"
-@interface CarDetailsViewController : UIViewController
+#import "CustomTextField.h"
+
+@interface CarDetailsViewController : UIViewController<UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate>
+{
+    NSArray *carDetailsArray;
+    NSArray *selectionDetailsArray;
+    CustomTextField *activeTxtFld;
+}
 @property (nonatomic, weak) IBOutlet HeaderView *headerView;
 @property (nonatomic, weak) IBOutlet UIImageView *makeImageView;
 @property (nonatomic, weak) IBOutlet UIImageView *modelImageView;
@@ -18,5 +25,16 @@
 @property (nonatomic, weak) IBOutlet UIImageView *registationImageView;
 @property (nonatomic, weak) IBOutlet UIImageView *kmImageView;
 @property (nonatomic, weak) IBOutlet UIImageView *carAddressImageView;
+
+@property (nonatomic, weak) IBOutlet CustomTextField *makeTxtFld;
+@property (nonatomic, weak) IBOutlet CustomTextField *modelTxtFld;
+@property (nonatomic, weak) IBOutlet CustomTextField *transmissionTxtFld;
+@property (nonatomic, weak) IBOutlet CustomTextField *yearTxtFld;
+@property (nonatomic, weak) IBOutlet CustomTextField *fuelTxtFld;
+@property (nonatomic, weak) IBOutlet CustomTextField *registrationTxtFld;
+@property (nonatomic, weak) IBOutlet CustomTextField *kmTxtFld;
+@property (nonatomic, weak) IBOutlet CustomTextField *carAddressTxtFld;
+
+@property (nonatomic, strong) IBOutlet UIPickerView *pickerView;
 - (IBAction)nextButtonAction:(UIButton *)sender;
 @end

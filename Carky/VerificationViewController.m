@@ -67,6 +67,7 @@
 #pragma mark -
 - (IBAction)resendButtonAction:(UIButton *)sender {
     //[self.navigationController popViewControllerAnimated:YES];
+    [self resendCode];
 }
 
 - (IBAction)secondButtonAction:(UIButton *)sender {
@@ -132,7 +133,7 @@
 }
 #pragma mark -
 #pragma mark -
--(void) verifyCode{
+-(void) resendCode{
     [self displayActivityIndicator];
     NetworkHandler *networkHandler = [[NetworkHandler alloc] init];
     [networkHandler makePostRequestWithUri:confirmPhoneNumber parameters:@{@"code":self.verificationCode,} withCompletion:^(id response, NSHTTPURLResponse *urlResponse, NSError *error) {
