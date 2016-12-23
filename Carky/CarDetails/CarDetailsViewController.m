@@ -46,6 +46,8 @@
 -(void) viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];
     [self getAllCarType];
+    //[self getTerms];
+   
 }
 /*
 #pragma mark - Navigation
@@ -116,6 +118,51 @@
     }];
 }
 #pragma mark -
+#pragma mark -
+-(void) getTerms{
+    [self displayActivityIndicator];
+    NSDictionary *postDict = @{@"Culture":@"sample string 1"};
+    NetworkHandler *networkHandler = [[NetworkHandler alloc] init];
+    [networkHandler makePostRequestWithUri:fetchTerms parameters:postDict withCompletion:^(id response, NSHTTPURLResponse *urlResponse, NSError *error) {
+        if (error) {
+            [self hideActivityIndicator];
+            [self displayAlertWithTitle:@"Error" withMessage:error.localizedDescription];
+            return ;
+        }
+        if (urlResponse.statusCode == 200) {
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self hideActivityIndicator];
+                if ([response isKindOfClass:[NSArray class]]){
+                    carDetailsArray = [NSArray arrayWithArray:response];
+                }
+                else{
+                    [self displayAlertWithTitle:@"Error" withMessage:@"Please try again"];
+                }
+            });
+        }
+        else{
+            NSLog(@"Display error message");
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self hideActivityIndicator];
+                if([response isKindOfClass:[NSDictionary class]]){
+                    if (response[@"Message"]) {
+                        [self displayAlertWithTitle:@"Error" withMessage:response[@"Message"]];
+                    }
+                }
+                else{
+                    [self displayAlertWithTitle:@"Error" withMessage:@"Please try again"];
+                }
+            });
+        }
+        
+    } withNetworkFailureBlock:^(NSString *message) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self displayAlertWithTitle:@"Error" withMessage:message];
+        });
+    }];
+ 
+}
 
 #pragma mark -
 -(void) displayAlertWithTitle:(NSString *)title withMessage:(NSString *)message{

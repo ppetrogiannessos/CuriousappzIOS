@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 typedef void(^CompletionBlock)(id response, NSHTTPURLResponse *urlResponse,NSError *error);
 typedef void (^NetworkFailureBlock)(NSString *message);
@@ -39,4 +40,6 @@ static NSString *fetchTerms = @"/api/Account/FetchTerms";
 //-
 //-
 -(void) makeunlencodedPostRequestwith:(NSString *)uri parameters:(NSString *)postString withCompletion:(CompletionBlock)completion withNetworkFailureBlock:(NetworkFailureBlock)networkBlock;
+
+-(void)addUserPostWithNamewithCompletion:(CompletionBlock)completion;
 @end
