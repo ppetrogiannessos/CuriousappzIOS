@@ -16,7 +16,9 @@ typedef void (^NetworkFailureBlock)(NSString *message);
 
 static NSString *baseUrl = @"http://carky-app.azurewebsites.net";
 static NSString *userRegistration = @"/api/Account/Register";
-static NSString *phoneNumberVerification = @"/api/Account/ConfirmPhoneNumber";
+static NSString *getToken = @"/token";
+static NSString *phoneNumberVerification = @"/api/Account/SendPhoneNumberConfirmation";
+static NSString *confirmPhoneNumber = @"/api/Account/ConfirmPhoneNumber";
 static NSString *addClientRole = @"";
 static NSString *addCarOwnerRole = @"";
 static NSString *resendCode = @"/api/Account/ConfirmPhoneNumber";
@@ -34,4 +36,7 @@ static NSString *fetchTerms = @"/api/Account/FetchTerms";
 
 //Post request 
 -(void) makePostRequestWithUri:(NSString *)uri parameters:(NSDictionary *)postDict withCompletion:(CompletionBlock)completion withNetworkFailureBlock:(NetworkFailureBlock)networkBlock;
+//-
+//-
+-(void) makeunlencodedPostRequestwith:(NSString *)uri parameters:(NSString *)postString withCompletion:(CompletionBlock)completion withNetworkFailureBlock:(NetworkFailureBlock)networkBlock;
 @end

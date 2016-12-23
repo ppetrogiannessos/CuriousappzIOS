@@ -20,6 +20,13 @@
 		FD51207E1E0C3DEF00B12C7C /* UploadCarAvtarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD51207C1E0C3DEF00B12C7C /* UploadCarAvtarViewController.xib */; };
 		FD5120831E0C458900B12C7C /* TermsConditionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5120811E0C458900B12C7C /* TermsConditionViewController.m */; };
 		FD5120841E0C458900B12C7C /* TermsConditionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD5120821E0C458900B12C7C /* TermsConditionViewController.xib */; };
+		FD5120F91E0D3D7A00B12C7C /* CheckMarkButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5120F61E0D3D7A00B12C7C /* CheckMarkButton.m */; };
+		FD5120FA1E0D3D7A00B12C7C /* CAActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5120F71E0D3D7A00B12C7C /* CAActivityIndicatorView.m */; };
+		FD5121021E0D3DAE00B12C7C /* Interior.png in Resources */ = {isa = PBXBuildFile; fileRef = FD5120FE1E0D3DAE00B12C7C /* Interior.png */; };
+		FD5121031E0D3DAE00B12C7C /* ThreeQuaters.png in Resources */ = {isa = PBXBuildFile; fileRef = FD5120FF1E0D3DAE00B12C7C /* ThreeQuaters.png */; };
+		FD5121041E0D3DAE00B12C7C /* FrontSide.png in Resources */ = {isa = PBXBuildFile; fileRef = FD5121001E0D3DAE00B12C7C /* FrontSide.png */; };
+		FD5121051E0D3DAE00B12C7C /* side.png in Resources */ = {isa = PBXBuildFile; fileRef = FD5121011E0D3DAE00B12C7C /* side.png */; };
+		FD5121091E0D3DC800B12C7C /* MediaSelectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5121081E0D3DC800B12C7C /* MediaSelectionController.m */; };
 		FDC62FE41E0B07CB002FF506 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC62FE31E0B07CB002FF506 /* main.m */; };
 		FDC62FE71E0B07CB002FF506 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC62FE61E0B07CB002FF506 /* AppDelegate.m */; };
 		FDC62FEA1E0B07CB002FF506 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC62FE91E0B07CB002FF506 /* ViewController.m */; };
@@ -72,6 +79,16 @@
 		FD5120801E0C458900B12C7C /* TermsConditionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TermsConditionViewController.h; path = TermsCondition/TermsConditionViewController.h; sourceTree = "<group>"; };
 		FD5120811E0C458900B12C7C /* TermsConditionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TermsConditionViewController.m; path = TermsCondition/TermsConditionViewController.m; sourceTree = "<group>"; };
 		FD5120821E0C458900B12C7C /* TermsConditionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TermsConditionViewController.xib; path = TermsCondition/TermsConditionViewController.xib; sourceTree = "<group>"; };
+		FD5120F51E0D3D7A00B12C7C /* CheckMarkButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckMarkButton.h; path = View/CheckMarkButton.h; sourceTree = "<group>"; };
+		FD5120F61E0D3D7A00B12C7C /* CheckMarkButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckMarkButton.m; path = View/CheckMarkButton.m; sourceTree = "<group>"; };
+		FD5120F71E0D3D7A00B12C7C /* CAActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CAActivityIndicatorView.m; path = View/CAActivityIndicatorView.m; sourceTree = "<group>"; };
+		FD5120F81E0D3D7A00B12C7C /* CAActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAActivityIndicatorView.h; path = View/CAActivityIndicatorView.h; sourceTree = "<group>"; };
+		FD5120FE1E0D3DAE00B12C7C /* Interior.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Interior.png; path = Resources/Images/Cars/Interior.png; sourceTree = "<group>"; };
+		FD5120FF1E0D3DAE00B12C7C /* ThreeQuaters.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ThreeQuaters.png; path = Resources/Images/Cars/ThreeQuaters.png; sourceTree = "<group>"; };
+		FD5121001E0D3DAE00B12C7C /* FrontSide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = FrontSide.png; path = Resources/Images/Cars/FrontSide.png; sourceTree = "<group>"; };
+		FD5121011E0D3DAE00B12C7C /* side.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = side.png; path = Resources/Images/Cars/side.png; sourceTree = "<group>"; };
+		FD5121071E0D3DC800B12C7C /* MediaSelectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MediaSelectionController.h; path = MediaPicker/MediaSelectionController.h; sourceTree = "<group>"; };
+		FD5121081E0D3DC800B12C7C /* MediaSelectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MediaSelectionController.m; path = MediaPicker/MediaSelectionController.m; sourceTree = "<group>"; };
 		FDC62FDF1E0B07CB002FF506 /* Carky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDC62FE31E0B07CB002FF506 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FDC62FE51E0B07CB002FF506 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -121,6 +138,7 @@
 		FD511FF01E0BE98B00B12C7C /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				FD5121061E0D3DB800B12C7C /* MediaPicker */,
 				FD5120731E0C345600B12C7C /* NetworkHandler */,
 				FD511FF11E0BE9A500B12C7C /* Utility.h */,
 				FD511FF21E0BE9A500B12C7C /* Utility.m */,
@@ -174,6 +192,42 @@
 			name = Terms;
 			sourceTree = "<group>";
 		};
+		FD5120FB1E0D3D8A00B12C7C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FD5120FC1E0D3D9800B12C7C /* Images */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		FD5120FC1E0D3D9800B12C7C /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				FD5120FD1E0D3D9F00B12C7C /* Cars */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		FD5120FD1E0D3D9F00B12C7C /* Cars */ = {
+			isa = PBXGroup;
+			children = (
+				FD5120FE1E0D3DAE00B12C7C /* Interior.png */,
+				FD5120FF1E0D3DAE00B12C7C /* ThreeQuaters.png */,
+				FD5121001E0D3DAE00B12C7C /* FrontSide.png */,
+				FD5121011E0D3DAE00B12C7C /* side.png */,
+			);
+			name = Cars;
+			sourceTree = "<group>";
+		};
+		FD5121061E0D3DB800B12C7C /* MediaPicker */ = {
+			isa = PBXGroup;
+			children = (
+				FD5121071E0D3DC800B12C7C /* MediaSelectionController.h */,
+				FD5121081E0D3DC800B12C7C /* MediaSelectionController.m */,
+			);
+			name = MediaPicker;
+			sourceTree = "<group>";
+		};
 		FDC62FD61E0B07CA002FF506 = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +251,7 @@
 		FDC62FE11E0B07CB002FF506 /* Carky */ = {
 			isa = PBXGroup;
 			children = (
+				FD5120FB1E0D3D8A00B12C7C /* Resources */,
 				FD51207F1E0C455400B12C7C /* Terms */,
 				FD51206D1E0C1B9000B12C7C /* CarDetails */,
 				FD511FF41E0BF3B100B12C7C /* Verification */,
@@ -245,6 +300,10 @@
 			isa = PBXGroup;
 			children = (
 				FDC630191E0B13DB002FF506 /* Images */,
+				FD5120F51E0D3D7A00B12C7C /* CheckMarkButton.h */,
+				FD5120F61E0D3D7A00B12C7C /* CheckMarkButton.m */,
+				FD5120F71E0D3D7A00B12C7C /* CAActivityIndicatorView.m */,
+				FD5120F81E0D3D7A00B12C7C /* CAActivityIndicatorView.h */,
 				FDC630161E0B0AED002FF506 /* HeaderView.h */,
 				FDC630171E0B0AED002FF506 /* HeaderView.m */,
 				FD511FFA1E0BF4EE00B12C7C /* CustomTextField.h */,
@@ -372,9 +431,13 @@
 			files = (
 				FD511FF91E0BF3EF00B12C7C /* VerificationViewController.xib in Resources */,
 				FDC6301B1E0B13FD002FF506 /* home.png in Resources */,
+				FD5121031E0D3DAE00B12C7C /* ThreeQuaters.png in Resources */,
+				FD5121021E0D3DAE00B12C7C /* Interior.png in Resources */,
 				FD5120721E0C1BBA00B12C7C /* CarDetailsViewController.xib in Resources */,
+				FD5121041E0D3DAE00B12C7C /* FrontSide.png in Resources */,
 				FD51207E1E0C3DEF00B12C7C /* UploadCarAvtarViewController.xib in Resources */,
 				FD5120841E0C458900B12C7C /* TermsConditionViewController.xib in Resources */,
+				FD5121051E0D3DAE00B12C7C /* side.png in Resources */,
 				FDC62FF21E0B07CC002FF506 /* LaunchScreen.storyboard in Resources */,
 				FDC62FEF1E0B07CB002FF506 /* Assets.xcassets in Resources */,
 				FDC62FED1E0B07CB002FF506 /* Main.storyboard in Resources */,
@@ -405,7 +468,9 @@
 				FDC62FEA1E0B07CB002FF506 /* ViewController.m in Sources */,
 				FD51207D1E0C3DEF00B12C7C /* UploadCarAvtarViewController.m in Sources */,
 				FDC62FE71E0B07CB002FF506 /* AppDelegate.m in Sources */,
+				FD5120F91E0D3D7A00B12C7C /* CheckMarkButton.m in Sources */,
 				FD511FF31E0BE9A500B12C7C /* Utility.m in Sources */,
+				FD5120FA1E0D3D7A00B12C7C /* CAActivityIndicatorView.m in Sources */,
 				FD5120831E0C458900B12C7C /* TermsConditionViewController.m in Sources */,
 				FD5120791E0C347200B12C7C /* Reachability.m in Sources */,
 				FD511FFF1E0BFD8C00B12C7C /* UIController.m in Sources */,
@@ -415,6 +480,7 @@
 				FDC630181E0B0AED002FF506 /* HeaderView.m in Sources */,
 				FD5120711E0C1BBA00B12C7C /* CarDetailsViewController.m in Sources */,
 				FD5120781E0C347200B12C7C /* NetworkHandler.m in Sources */,
+				FD5121091E0D3DC800B12C7C /* MediaSelectionController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,7 +633,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = L7YZFBS3EK;
 				INFOPLIST_FILE = Carky/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.curiousappz.Carky;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -580,7 +646,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = L7YZFBS3EK;
 				INFOPLIST_FILE = Carky/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.curiousappz.Carky;
 				PRODUCT_NAME = "$(TARGET_NAME)";

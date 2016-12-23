@@ -73,13 +73,29 @@
         [request setValue:[NSString stringWithFormat:@"Bearer %@",[[NSUserDefaults standardUserDefaults] objectForKey:KAppAuthenticationToken]] forHTTPHeaderField:@"Authorization"];
     }
     NSError *error;
-    NSDictionary *postInfo = [self addDefaultparamsToPostData:postDict];
-    NSData *postdata = [NSJSONSerialization dataWithJSONObject:postInfo options:NSJSONWritingPrettyPrinted error:&error];
+    //NSDictionary *postInfo = [self addDefaultparamsToPostData:postDict];
+    NSData *postdata = [NSJSONSerialization dataWithJSONObject:postDict options:NSJSONWritingPrettyPrinted error:&error];
+    [request setHTTPBody:postdata];
+    [self httpConnectionWithRequest:request withCompletion:completion];
+}
+-(void) makeunlencodedPostRequestwith:(NSString *)uri parameters:(NSString *)postString withCompletion:(CompletionBlock)completion withNetworkFailureBlock:(NetworkFailureBlock)networkBlock{
+    if ([self checkNetworkStatus] == NO) {
+        networkBlock(KNetworkFailureMessage);
+        return;
+    }
+    NSMutableURLRequest *request = [self makeHttpRequestWithUrl:uri];
+    request.HTTPMethod = @"POST";
+    [request setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    //NSError *error;
+    NSData *postdata = [postString dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    NSString *postLength = [NSString stringWithFormat:@"%zd", [postdata length]];
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"]; [request setTimeoutInterval:20.0];
     [request setHTTPBody:postdata];
     [self httpConnectionWithRequest:request withCompletion:completion];
 }
 -(NSMutableURLRequest *) makeHttpRequestWithUrl:(NSString *)urlString{
-   // urlString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:<#(nonnull NSCharacterSet *)#>];
+    // urlString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:<#(nonnull NSCharacterSet *)#>];
     urlString = [NSString stringWithFormat:@"%@%@",baseUrl, urlString];
     return [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:90.0];
 }
@@ -91,7 +107,7 @@
         NSLog(@"resposne = %@", response);
         NSLog(@"Error = %@",error);
         if (error) {
-            completion(nil,response, error);
+            completion(nil,(NSHTTPURLResponse *)response, error);
             return ;
         }
         //-----
@@ -100,12 +116,12 @@
         if (locationresponse != nil) {
             NSLog(@"\n\n\n");
             NSLog(@"location response = %@",locationresponse);
-             completion(locationresponse,response, error);
+            completion(locationresponse,(NSHTTPURLResponse *)response, error);
         }
         else{
             NSString *str= [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
             NSLog(@"str = %@", str);
-            completion(str, response,error);
+            completion(str, (NSHTTPURLResponse *)response,error);
         }
         
     }];

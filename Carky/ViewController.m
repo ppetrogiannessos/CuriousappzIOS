@@ -10,9 +10,12 @@
 #import "Utility.h"
 #import "VerificationViewController.h"
 #import "NetworkHandler.h"
+#import "CAActivityIndicatorView.h"
 
 @interface ViewController ()
-
+{
+    CAActivityIndicatorView *caActivityIndicator;
+}
 @end
 
 @implementation ViewController
@@ -49,8 +52,8 @@
 }
 #pragma mark - TextFieldDelegate
 -(void) textFieldDidBeginEditing:(UITextField *)textField{
-//    NSLog(@"frame = %@", NSStringFromCGRect(textField.frame));
-//    [self updateTopLayoutConstraint:-textField.frame.origin.y+120 - 70];
+    //    NSLog(@"frame = %@", NSStringFromCGRect(textField.frame));
+    //    [self updateTopLayoutConstraint:-textField.frame.origin.y+120 - 70];
     currentSelectedTxtFld = textField;
     if (textField.keyboardType == UIKeyboardTypePhonePad) {
         [self addAccessoryViewtoTextField:textField];
@@ -101,10 +104,27 @@
     currentSelectedTxtFld = nil;
     [self updateTopLayoutConstraint:0];
 }
+#pragma mark -
+-(void) displayActivityIndicator{
+    if (!caActivityIndicator) {
+        caActivityIndicator = [[CAActivityIndicatorView alloc] initWithFrame:self.navigationController.view.frame];
+    }
+    [self.navigationController.view addSubview:caActivityIndicator];
+    // [caActivityIndicator setMessageText:@"Exporting video"];
+    [caActivityIndicator displayActivityIndicatorView];
+}
+-(void) hideActivityIndicator{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [caActivityIndicator hideActivityIndicatorView];
+    });
+    
+}
 #pragma mark - IBAction
 - (IBAction)nextButtonAction:(UIButton *)sender {
-    [self displayVerficationController];
-    return;
+//        self.emailTxtFld.text = @"avinash@gmail.com";
+//        self.passwordTxtFld.text = @"qwerty";
+//        [self getAuthenticationToken:[[NetworkHandler alloc] init]];
+//        return;
     if (self.nameTxtFld.text.length<1 || self.surnameTxtFld.text.length<1 || self.addressTxtFld.text.length < 1 || self.emailTxtFld.text.length < 1 || self.passwordTxtFld.text.length < 1 || self.confirmPasswordTxtFld.text.length < 1 || self.mobileNumberTxtFld.text.length < 1) {
         [self displayAlertWithTitle:@"" withMessage:@"All fields are mandatory"];
         return;
@@ -121,49 +141,135 @@
     [self registerUser];
 }
 -(void) registerUser{
+    [self displayActivityIndicator];
     NSDictionary *postDict = @{@"FirstName":self.nameTxtFld.text, @"Surname":self.surnameTxtFld.text, @"Address":self.addressTxtFld.text, @"Email":self.emailTxtFld.text, @"PhoneNumber":self.mobileNumberTxtFld.text, @"Password":self.passwordTxtFld.text, @"ConfirmPassword":self.confirmPasswordTxtFld.text};
     NetworkHandler *networkHandler = [[NetworkHandler alloc] init];
     [networkHandler makePostRequestWithUri:userRegistration parameters:postDict withCompletion:^(id response,NSHTTPURLResponse *urlResponse, NSError *error) {
         if (error) {
+            [self displayAlertWithTitle:@"Error" withMessage:error.localizedDescription];
+            [self hideActivityIndicator];
             return ;
         }
         if (urlResponse.statusCode == 200) {
             NSLog(@"Send phone number verification request");
+            [self performSelector:@selector(getAuthenticationToken:) withObject:networkHandler afterDelay:1.0];
+            //[self getAuthenticationToken:networkHandler];
         }
         else{
+            [self hideActivityIndicator];
+            if([response isKindOfClass:[NSDictionary class]]){
+                if (response[@"Message"]) {
+                    [self displayAlertWithTitle:@"Error" withMessage:response[@"Message"]];
+                }
+            }
+            else{
+                [self displayAlertWithTitle:@"Error" withMessage:@"Please try again"];
+            }
+            
             NSLog(@"Display error message");
         }
     } withNetworkFailureBlock:^(NSString *message) {
         NSLog(@"Network not available");
+        [self hideActivityIndicator];
+        [self displayAlertWithTitle:@"No internet connection" withMessage:@"Please check internet connection and try again"];
     }];
 }
--(void) sendPhoneNumberVerificationRequest:(NetworkHandler *)networkHandler{
-    [networkHandler makePostRequestWithUri:phoneNumberVerification parameters:@{@"PhoneNumber":self.mobileNumberTxtFld.text} withCompletion:^(id response, NSHTTPURLResponse *urlResponse, NSError *error) {
+-(void) getAuthenticationToken:(NetworkHandler *)networkHandler{
+    
+    [networkHandler makeunlencodedPostRequestwith:getToken parameters:[NSString stringWithFormat:@"grant_type=password&username=%@&password=%@",self.emailTxtFld.text, self.passwordTxtFld.text] withCompletion:^(id response, NSHTTPURLResponse *urlResponse, NSError *error) {
         if (error) {
+            [self hideActivityIndicator];
+            [self displayAlertWithTitle:@"Error" withMessage:error.localizedDescription];
             return ;
         }
         if (urlResponse.statusCode == 200) {
-            [self displayVerficationController];
+            [self hideActivityIndicator];
+            if([response isKindOfClass:[NSDictionary class]]){
+                NSString *accessToken = [NSString stringWithFormat:@"%@",response[@"access_token"]];
+                [[NSUserDefaults standardUserDefaults] setObject:accessToken forKey:KAppAuthenticationToken];
+                NSLog(@"access_token -  %@",accessToken);
+                [self sendPhoneNumberVerificationRequest:networkHandler];
+            }
         }
         else{
             NSLog(@"Display error message");
+            
+            [self hideActivityIndicator];
+            if([response isKindOfClass:[NSDictionary class]]){
+                if (response[@"Message"]) {
+                    [self displayAlertWithTitle:@"Error" withMessage:response[@"Message"]];
+                }
+                else if (response[@"error_description"]){
+                    [self displayAlertWithTitle:@"Error" withMessage:response[@"error_description"]];
+                }
+                else if (response[@"error"]) {
+                    [self displayAlertWithTitle:@"Error" withMessage:response[@"error"]];
+                }
+            }
+            else{
+                [self displayAlertWithTitle:@"Error" withMessage:@"Please try again"];
+            }
         }
     } withNetworkFailureBlock:^(NSString *message) {
-        
+        NSLog(@"Network not available");
+        [self hideActivityIndicator];
+        [self displayAlertWithTitle:@"No internet connection" withMessage:@"Please check internet connection and try again"];
+    }];
+}
+-(void) sendPhoneNumberVerificationRequest:(NetworkHandler *)networkHandler{
+    [networkHandler makePostRequestWithUri:phoneNumberVerification parameters:@{@"api_key":@""} withCompletion:^(id response, NSHTTPURLResponse *urlResponse, NSError *error) {
+        if (error) {
+            [self hideActivityIndicator];
+            [self displayAlertWithTitle:@"Error" withMessage:error.localizedDescription];
+            return ;
+        }
+        if (urlResponse.statusCode == 200) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if ([response isKindOfClass:[NSString class]]){
+                    [self displayVerficationControllerWithCode:response];
+                }
+                else{
+                    [self displayAlertWithTitle:@"Error" withMessage:@"Please try again"];
+                }
+            });
+        }
+        else{
+            NSLog(@"Display error message");
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self hideActivityIndicator];
+                if([response isKindOfClass:[NSDictionary class]]){
+                    if (response[@"Message"]) {
+                        [self displayAlertWithTitle:@"Error" withMessage:response[@"Message"]];
+                    }
+                }
+                else{
+                    [self displayAlertWithTitle:@"Error" withMessage:@"Please try again"];
+                }
+            });
+            
+        }
+    } withNetworkFailureBlock:^(NSString *message) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self displayAlertWithTitle:@"Error" withMessage:message];
+        });
     }];
 }
 #pragma mark -
 -(void) displayAlertWithTitle:(NSString *)title withMessage:(NSString *)message{
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        
-    }];
-    [alertController addAction:cancelAction];
-    [self presentViewController:alertController animated:YES completion:nil];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            
+        }];
+        [alertController addAction:cancelAction];
+        [self presentViewController:alertController animated:YES completion:nil];
+    });
+    
 }
 #pragma mark -
--(void) displayVerficationController{
+-(void) displayVerficationControllerWithCode:(NSString *)code{
     VerificationViewController *verificationController = [[VerificationViewController alloc] initWithNibName:@"VerificationViewController" bundle:nil];
+    verificationController.verificationCode = code;
     [self.navigationController pushViewController:verificationController animated:YES];
 }
 @end

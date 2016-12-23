@@ -11,6 +11,7 @@
 #import "CustomTextField.h"
 
 @interface VerificationViewController : UIViewController<UITextFieldDelegate>
+@property (nonatomic, strong) NSString *verificationCode;
 @property (weak, nonatomic) IBOutlet UIView *backCodeView;;
 @property (weak, nonatomic) IBOutlet CustomTextField *firstTxtFld;
 @property (weak, nonatomic) IBOutlet CustomTextField *secTxtFld;
