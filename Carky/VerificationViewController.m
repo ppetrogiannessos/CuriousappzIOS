@@ -33,6 +33,7 @@
 -(void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.headerView updateViewIndicator:1];
+    self.messageLabel.text = [NSString stringWithFormat:@"Enter the code sent to %@",self.phoneNumber];
 }
 -(void) viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];
@@ -65,18 +66,18 @@
 }
 #pragma mark -
 - (IBAction)resendButtonAction:(UIButton *)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+    //[self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)secondButtonAction:(UIButton *)sender {
 }
 - (IBAction)submitButtonAction:(UIButton *)sender{
-    if (self.firstTxtFld.text.length != 1 || self.secTxtFld.text.length != 1 || self.thirdTxtFld.text.length != 1 || self.fourthTxtFld.text.length != 1 || self.fifthTxtFld.text.length != 1 || self.sixTxtFld.text.length != 1) {
-        return;
-    }
-    NSString *code = [NSString stringWithFormat:@"%@%@%@%@%@%@",self.firstTxtFld.text,self.secTxtFld.text,self.thirdTxtFld.text,self.fourthTxtFld.text,self.fifthTxtFld.text,self.sixTxtFld.text];
-    NSLog(@"Code = %@", code);
-    //[self gotoCarDetailsController];
+//    if (self.firstTxtFld.text.length != 1 || self.secTxtFld.text.length != 1 || self.thirdTxtFld.text.length != 1 || self.fourthTxtFld.text.length != 1 || self.fifthTxtFld.text.length != 1 || self.sixTxtFld.text.length != 1) {
+//        return;
+//    }
+//    NSString *code = [NSString stringWithFormat:@"%@%@%@%@%@%@",self.firstTxtFld.text,self.secTxtFld.text,self.thirdTxtFld.text,self.fourthTxtFld.text,self.fifthTxtFld.text,self.sixTxtFld.text];
+//    NSLog(@"Code = %@", code);
+    [self gotoCarDetailsController];
 }
 #pragma mark -
 -(void) textFieldDidBeginEditing:(UITextField *)textField{
@@ -130,6 +131,7 @@
     [self.navigationController pushViewController:carDetailsController animated:YES];
 }
 #pragma mark -
+#pragma mark -
 -(void) verifyCode{
     [self displayActivityIndicator];
     NetworkHandler *networkHandler = [[NetworkHandler alloc] init];
@@ -140,9 +142,10 @@
             return ;
         }
         if (urlResponse.statusCode == 200) {
+            [self hideActivityIndicator];
             dispatch_async(dispatch_get_main_queue(), ^{
                 if ([response isKindOfClass:[NSString class]]){
-                    
+                    [self displayAlertWithTitle:@"Success" withMessage:@"code sent"];
                 }
                 else{
                     [self displayAlertWithTitle:@"Error" withMessage:@"Please try again"];
@@ -182,4 +185,5 @@
     });
     
 }
+#pragma mamrk -
 @end

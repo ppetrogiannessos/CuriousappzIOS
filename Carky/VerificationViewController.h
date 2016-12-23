@@ -12,6 +12,8 @@
 
 @interface VerificationViewController : UIViewController<UITextFieldDelegate>
 @property (nonatomic, strong) NSString *verificationCode;
+@property (nonatomic, strong) NSString *phoneNumber;
+
 @property (weak, nonatomic) IBOutlet UIView *backCodeView;;
 @property (weak, nonatomic) IBOutlet CustomTextField *firstTxtFld;
 @property (weak, nonatomic) IBOutlet CustomTextField *secTxtFld;

@@ -121,10 +121,11 @@
 }
 #pragma mark - IBAction
 - (IBAction)nextButtonAction:(UIButton *)sender {
-//        self.emailTxtFld.text = @"avinash@gmail.com";
-//        self.passwordTxtFld.text = @"qwerty";
-//        [self getAuthenticationToken:[[NetworkHandler alloc] init]];
-//        return;
+        self.emailTxtFld.text = @"avinash@gmail.com";
+        self.passwordTxtFld.text = @"qwerty";
+        [self getAuthenticationToken:[[NetworkHandler alloc] init]];
+    //[self displayVerficationControllerWithCode:@""];
+        return;
     if (self.nameTxtFld.text.length<1 || self.surnameTxtFld.text.length<1 || self.addressTxtFld.text.length < 1 || self.emailTxtFld.text.length < 1 || self.passwordTxtFld.text.length < 1 || self.confirmPasswordTxtFld.text.length < 1 || self.mobileNumberTxtFld.text.length < 1) {
         [self displayAlertWithTitle:@"" withMessage:@"All fields are mandatory"];
         return;
@@ -216,6 +217,7 @@
         [self displayAlertWithTitle:@"No internet connection" withMessage:@"Please check internet connection and try again"];
     }];
 }
+#pragma mark -
 -(void) sendPhoneNumberVerificationRequest:(NetworkHandler *)networkHandler{
     [networkHandler makePostRequestWithUri:phoneNumberVerification parameters:@{@"api_key":@""} withCompletion:^(id response, NSHTTPURLResponse *urlResponse, NSError *error) {
         if (error) {
@@ -224,9 +226,71 @@
             return ;
         }
         if (urlResponse.statusCode == 200) {
+            [self addClientRoleWithNetworkHandler:networkHandler andCode:response];
+        }
+        else{
+            NSLog(@"Display error message");
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self hideActivityIndicator];
+                if([response isKindOfClass:[NSDictionary class]]){
+                    if (response[@"Message"]) {
+                        [self displayAlertWithTitle:@"Error" withMessage:response[@"Message"]];
+                    }
+                }
+                else{
+                    [self displayAlertWithTitle:@"Error" withMessage:@"Please try again"];
+                }
+            });
+            
+        }
+    } withNetworkFailureBlock:^(NSString *message) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self displayAlertWithTitle:@"Error" withMessage:message];
+        });
+    }];
+}
+#pragma mark -
+-(void) addClientRoleWithNetworkHandler:(NetworkHandler *)networkHandler andCode:(NSString *)code{
+    [networkHandler makePostRequestWithUri:addClientRole parameters:@{@"api_key":[[NSUserDefaults standardUserDefaults] objectForKey:KAppAuthenticationToken]} withCompletion:^(id response, NSHTTPURLResponse *urlResponse, NSError *error) {
+        if (error) {
+            [self hideActivityIndicator];
+            [self displayAlertWithTitle:@"Error" withMessage:error.localizedDescription];
+            return ;
+        }
+        if (urlResponse.statusCode == 204) {
+            [self addCarOwnerRoleWithNetworkHandler:networkHandler withCode:code];
+        }
+        else{
+            NSLog(@"Display error message");
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self hideActivityIndicator];
+                if([response isKindOfClass:[NSDictionary class]]){
+                    if (response[@"Message"]) {
+                        [self displayAlertWithTitle:@"Error" withMessage:response[@"Message"]];
+                    }
+                }
+                else{
+                    [self displayAlertWithTitle:@"Error" withMessage:@"Please try again"];
+                }
+            });
+        }
+    } withNetworkFailureBlock:^(NSString *message) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self displayAlertWithTitle:@"Error" withMessage:message];
+        });
+    }];
+}
+-(void)addCarOwnerRoleWithNetworkHandler:(NetworkHandler *)networkHandler withCode:(NSString *)code{
+    [networkHandler makePostRequestWithUri:addCarOwnerRole parameters:@{@"api_key":[[NSUserDefaults standardUserDefaults] objectForKey:KAppAuthenticationToken]} withCompletion:^(id response, NSHTTPURLResponse *urlResponse, NSError *error) {
+        if (error) {
+            [self hideActivityIndicator];
+            [self displayAlertWithTitle:@"Error" withMessage:error.localizedDescription];
+            return ;
+        }
+        if (urlResponse.statusCode == 204) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 if ([response isKindOfClass:[NSString class]]){
-                    [self displayVerficationControllerWithCode:response];
+                    [self displayVerficationControllerWithCode:code];
                 }
                 else{
                     [self displayAlertWithTitle:@"Error" withMessage:@"Please try again"];
@@ -264,11 +328,11 @@
         [alertController addAction:cancelAction];
         [self presentViewController:alertController animated:YES completion:nil];
     });
-    
 }
 #pragma mark -
 -(void) displayVerficationControllerWithCode:(NSString *)code{
     VerificationViewController *verificationController = [[VerificationViewController alloc] initWithNibName:@"VerificationViewController" bundle:nil];
+    verificationController.phoneNumber = self.mobileNumberTxtFld.text;
     verificationController.verificationCode = code;
     [self.navigationController pushViewController:verificationController animated:YES];
 }
