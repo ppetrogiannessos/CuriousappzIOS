@@ -45,11 +45,11 @@
     self.logoImageView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
     [self addSubview:self.logoImageView];
     //add menu button
-    self.menuButton = [self initializeButton:self.menuButton withImage:[UIImage imageNamed:@"home_icon.png"] andFrame:CGRectMake(20, 25, 24, 24)];
+    self.menuButton = [self initializeButton:self.menuButton withImage:[UIImage imageNamed:@"home_icon.png"] andFrame:CGRectMake(20, 25, 24, 15)];
     [self.menuButton addTarget:self action:@selector(menuButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.menuButton];
     //add route button
-    self.routeButton = [self initializeButton:self.menuButton withImage:[UIImage imageNamed:@"route_icon.png"] andFrame:CGRectMake(self.frame.size.width - 44, 25, 24, 24)];
+    self.routeButton = [self initializeButton:self.menuButton withImage:[UIImage imageNamed:@"route_icon.png"] andFrame:CGRectMake(self.frame.size.width - 44, 25, 24, 15)];
     [self.routeButton addTarget:self action:@selector(routeButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     self.routeButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
     [self addSubview:self.routeButton];

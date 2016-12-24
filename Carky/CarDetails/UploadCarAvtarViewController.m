@@ -67,14 +67,21 @@
 
 
 #pragma mark -
--(void) makeHttpRequestForUploadCarImages:(NSArray *)carImageList{
-    
+-(void) uploadCarImages{
+    NSArray *imageList = @[[UIImage imageNamed:@"side.png"],[UIImage imageNamed:@"FrontSide.png"],[UIImage imageNamed:@"ThreeQuaters.png"],[UIImage imageNamed:@"Interior.png"]];
+    NetworkHandler *handler = [[NetworkHandler alloc] init];
+    [handler makeRquestForUploadImages:imageList withUri:[NSString stringWithFormat:@"%@?carId=%@",uploadCarPhotos, self.carId] postData:@{@"carId":self.carId} withCompletionHandler:^(id response, NSHTTPURLResponse *urlResponse, NSError *error) {
+        NSLog(@"resonse = %@", response);
+        NSLog(@"Error = %@", error);
+    } withNetworkFailureBlock:^(NSString *message) {
+        NSLog(@"network error");
+    }];
 }
--(void) uploadPicService{
+-(void) makeHttpRequestForUploadCarImages:(NSArray *)carImageList{
     [self displayActivityIndicator];
-    // NSDictionary *postDict = @{@"Culture":@"sample string 1"};
     NetworkHandler *networkHandler = [[NetworkHandler alloc] init];
-    [networkHandler addUserPostWithNamewithCompletion:^(id response, NSHTTPURLResponse *urlResponse, NSError *error) {
+    NSString *uri = [NSString stringWithFormat:@"%@?carId=%@",uploadCarPhotos,self.carId];
+    [networkHandler addCar:uri withImages:carImageList postData:@{} withCompletion:^(id response, NSHTTPURLResponse *urlResponse, NSError *error) {
         if (error) {
             [self hideActivityIndicator];
             [self displayAlertWithTitle:@"Error" withMessage:error.localizedDescription];
@@ -84,12 +91,7 @@
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self hideActivityIndicator];
-                if ([response isKindOfClass:[NSArray class]]){
-                    //carDetailsArray = [NSArray arrayWithArray:response];
-                }
-                else{
-                    [self displayAlertWithTitle:@"Error" withMessage:@"Please try again"];
-                }
+                [self gotoTermsConditionController];
             });
         }
         else{
@@ -106,10 +108,12 @@
                 }
             });
         }
-        
+    } withNetworkFailureBlock:^(NSString *message) {
+        [self hideActivityIndicator];
+        [self displayAlertWithTitle:@"No internet connection" withMessage:@"Please check internet connection and try again"];
     }];
-    
 }
+
 
 
 /*
@@ -127,8 +131,8 @@
         [self displayAlertWithTitle:@"" withMessage:@"Upload image for all sections"];
         return;
     }
-    //[self uploadPicService];
-    [self gotoTermsConditionController];
+    [self makeHttpRequestForUploadCarImages:@[self.sideBtn.currentBackgroundImage, self.frontSideBtn.currentBackgroundImage, self.threeQuarterBtn.currentBackgroundImage, self.interiorBtn.currentBackgroundImage]];
+    //[self gotoTermsConditionController];
 }
 -(void) gotoTermsConditionController{
     TermsConditionViewController *termsController = [[TermsConditionViewController alloc] initWithNibName:@"TermsConditionViewController" bundle:nil];

@@ -20,86 +20,6 @@
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Carky/ViewController.m"
-            timestampString = "504221277.738407"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "235"
-            endingLineNumber = "235"
-            landmarkName = "-sendPhoneNumberVerificationRequest:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Carky/ViewController.m"
-            timestampString = "504221277.738407"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "262"
-            endingLineNumber = "262"
-            landmarkName = "-addClientRoleWithNetworkHandler:andCode:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Carky/ViewController.m"
-            timestampString = "504221277.738407"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "292"
-            endingLineNumber = "292"
-            landmarkName = "-addCarOwnerRoleWithNetworkHandler:withCode:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Carky/CarDetails/CarDetailsViewController.m"
-            timestampString = "504215541.986082"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
-            landmarkName = "-getAllCarType"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Carky/CarDetails/CarDetailsViewController.m"
-            timestampString = "504215541.986082"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "-getAllCarType"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "Yes"
@@ -131,157 +51,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Carky/ViewController.m"
-            timestampString = "504222776.740989"
+            filePath = "Carky/Utility/NetworkHandler/NetworkHandler.m"
+            timestampString = "504274759.265887"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "229"
-            endingLineNumber = "229"
-            landmarkName = "-sendPhoneNumberVerificationRequest:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[ViewController sendPhoneNumberVerificationRequest:]"
-                  moduleName = "Carky"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/avinashkashyap/CAWorkspace/CuriousappzIOS/Carky/ViewController.m"
-                  timestampString = "504254039.532064"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "229"
-                  endingLineNumber = "229"
-                  offsetFromSymbolStart = "128">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__53-[ViewController sendPhoneNumberVerificationRequest:]_block_invoke"
-                  moduleName = "Carky"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/avinashkashyap/CAWorkspace/CuriousappzIOS/Carky/ViewController.m"
-                  timestampString = "504254039.534002"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "230"
-                  endingLineNumber = "230"
-                  offsetFromSymbolStart = "112">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Carky/ViewController.m"
-            timestampString = "504222787.016485"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "261"
-            endingLineNumber = "261"
-            landmarkName = "-addClientRoleWithNetworkHandler:andCode:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[ViewController addClientRoleWithNetworkHandler:andCode:]"
-                  moduleName = "Carky"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/avinashkashyap/CAWorkspace/CuriousappzIOS/Carky/ViewController.m"
-                  timestampString = "504254039.538098"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "261"
-                  endingLineNumber = "261"
-                  offsetFromSymbolStart = "144">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__58-[ViewController addClientRoleWithNetworkHandler:andCode:]_block_invoke"
-                  moduleName = "Carky"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/avinashkashyap/CAWorkspace/CuriousappzIOS/Carky/ViewController.m"
-                  timestampString = "504254039.539935"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "262"
-                  endingLineNumber = "262"
-                  offsetFromSymbolStart = "112">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Carky/ViewController.m"
-            timestampString = "504222790.762441"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "291"
-            endingLineNumber = "291"
-            landmarkName = "-addCarOwnerRoleWithNetworkHandler:withCode:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[ViewController addCarOwnerRoleWithNetworkHandler:withCode:]"
-                  moduleName = "Carky"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/avinashkashyap/CAWorkspace/CuriousappzIOS/Carky/ViewController.m"
-                  timestampString = "504254039.543712"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "291"
-                  endingLineNumber = "291"
-                  offsetFromSymbolStart = "144">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__61-[ViewController addCarOwnerRoleWithNetworkHandler:withCode:]_block_invoke"
-                  moduleName = "Carky"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/avinashkashyap/CAWorkspace/CuriousappzIOS/Carky/ViewController.m"
-                  timestampString = "504254039.545562"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "292"
-                  endingLineNumber = "292"
-                  offsetFromSymbolStart = "116">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Carky/CarDetails/CarDetailsViewController.m"
-            timestampString = "504249622.482739"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "362"
-            endingLineNumber = "362"
-            landmarkName = "-nextButtonAction:"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "-makeRquestForUploadImages:withUri:postData:withCompletionHandler:withNetworkFailureBlock:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -291,13 +67,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Carky/CarDetails/CarDetailsViewController.m"
-            timestampString = "504249628.594924"
+            filePath = "Carky/Utility/NetworkHandler/NetworkHandler.m"
+            timestampString = "504275412.706398"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "370"
-            endingLineNumber = "370"
-            landmarkName = "-makeRequestForAddCar:"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
+            landmarkName = "-makeRquestForUploadImages:withUri:postData:withCompletionHandler:withNetworkFailureBlock:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -307,13 +83,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Carky/CarDetails/CarDetailsViewController.m"
-            timestampString = "504250548.740725"
+            filePath = "Carky/Utility/NetworkHandler/NetworkHandler.m"
+            timestampString = "504275412.706398"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "393"
-            endingLineNumber = "393"
-            landmarkName = "-makeRequestForAddCar:"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "-makeRquestForUploadImages:withUri:postData:withCompletionHandler:withNetworkFailureBlock:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -323,13 +99,125 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Carky/CarDetails/CarDetailsViewController.m"
-            timestampString = "504250600.739949"
+            filePath = "Carky/Utility/NetworkHandler/NetworkHandler.m"
+            timestampString = "504275412.706398"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "390"
-            endingLineNumber = "390"
-            landmarkName = "-makeRequestForAddCar:"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
+            landmarkName = "-makeRquestForUploadImages:withUri:postData:withCompletionHandler:withNetworkFailureBlock:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Carky/Utility/NetworkHandler/NetworkHandler.m"
+            timestampString = "504275412.706398"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
+            landmarkName = "-makeRquestForUploadImages:withUri:postData:withCompletionHandler:withNetworkFailureBlock:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Carky/Utility/NetworkHandler/NetworkHandler.m"
+            timestampString = "504281400.056628"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
+            landmarkName = "-addCar:withImages:postData:withCompletion:withNetworkFailureBlock:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Carky/CarDetails/UploadCarAvtarViewController.m"
+            timestampString = "504282245.05261"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "-makeHttpRequestForUploadCarImages:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Carky/CarDetails/UploadCarAvtarViewController.m"
+            timestampString = "504282245.05261"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "-makeHttpRequestForUploadCarImages:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Carky/Utility/NetworkHandler/NetworkHandler.m"
+            timestampString = "504281712.145879"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "-httpConnectionWithRequest:withCompletion:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Carky/Utility/NetworkHandler/NetworkHandler.m"
+            timestampString = "504281714.219322"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "-httpConnectionWithRequest:withCompletion:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Carky/Utility/NetworkHandler/NetworkHandler.m"
+            timestampString = "504281992.110281"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "-httpConnectionWithRequest:withCompletion:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

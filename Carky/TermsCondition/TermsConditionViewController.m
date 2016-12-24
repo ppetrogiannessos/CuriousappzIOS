@@ -71,7 +71,7 @@
 -(void) getTermsAndCondition{
     [self displayActivityIndicator];
     NetworkHandler *networkHandler = [[NetworkHandler alloc] init];
-    [networkHandler makePostRequestWithUri:fetchTerms parameters:@{@"Culture": @"string"} withCompletion:^(id response, NSHTTPURLResponse *urlResponse, NSError *error) {
+    [networkHandler makePostRequestWithUri:fetchTerms parameters:@{@"Culture": @"en_US"} withCompletion:^(id response, NSHTTPURLResponse *urlResponse, NSError *error) {
         if (error) {
             [self hideActivityIndicator];
             [self displayAlertWithTitle:@"Error" withMessage:error.localizedDescription];
@@ -81,8 +81,8 @@
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self hideActivityIndicator];
-                if ([response isKindOfClass:[NSArray class]]){
-                    
+                if ([response isKindOfClass:[NSDictionary class]]){
+                    self.termsTextView.text = response[@"Text"];
                 }
                 else{
                     [self displayAlertWithTitle:@"Error" withMessage:@"Please try again"];

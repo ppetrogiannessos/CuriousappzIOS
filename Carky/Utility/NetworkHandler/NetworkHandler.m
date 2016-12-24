@@ -128,16 +128,52 @@
     [task resume];
 }
 
--(void)addUserPostWithNamewithCompletion:(CompletionBlock)completion
+#pragma mark -
+-(void) makeRquestForUploadImages:(NSArray*)imageList withUri:(NSString *)uri postData:(NSDictionary *)postData withCompletionHandler:(CompletionBlock)completionBloack withNetworkFailureBlock:(NetworkFailureBlock)networkBlock{
+    
+    if ([self checkNetworkStatus] == NO) {
+        networkBlock(KNetworkFailureMessage);
+        return;
+    }
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    [manager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@",[[NSUserDefaults standardUserDefaults] objectForKey:KAppAuthenticationToken]] forHTTPHeaderField:@"Authorization"];
+    
+    //[manager.requestSerializer setValue:@"false" forHTTPHeaderField:@"Content-Type"];
+    [manager.requestSerializer setValue:@"false" forHTTPHeaderField:@"Accept"];
+    NSString *urlString = [NSString stringWithFormat:@"%@%@",baseUrl, uri];
+    NSArray *nameKeyArray = @[@"sidepic",@"frontpic",@"outsidepic",@"insidepic"];
+    [manager method:@"POST" andUrl:urlString parameters:postData constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        int i = 0;
+        for(UIImage *image in imageList){
+            NSData *imageData = UIImageJPEGRepresentation(image, 1);
+            [formData appendPartWithFileData:imageData name:@"[0][uploaded_file]" fileName:[NSString stringWithFormat:@"[0]%@",[nameKeyArray objectAtIndex:i]] mimeType:@"multipart/form-data"];
+            i++;
+        }
+        
+    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"Response upload image: %@", responseObject);
+        if(operation.response.statusCode == 200){
+            
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Response Object Error= %@ \n \nError = %@",operation.responseObject,error);
+    }];
+}
+#pragma mark -
+-(void)addCar:(NSString *)uri withImages:(NSArray *)imageList postData:(NSDictionary *)postDict withCompletion:(CompletionBlock)completion withNetworkFailureBlock:(NetworkFailureBlock)networkBlock
 {
-    NSArray *photo_name;
-   // RETRY_COUNT = 0;
-    NSError *error;
+    if ([self checkNetworkStatus] == NO) {
+        networkBlock(KNetworkFailureMessage);
+        return;
+    }
+
     NSString *boundary = @"-------------------------0xKhTmLbOuNdArY";
-    NSString *urlStr =[NSString stringWithFormat:@"http://carky-app.azurewebsites.net/api/CarOwner/UploadCarPhotos?carId=1"];
+    //NSString *urlStr =[NSString stringWithFormat:@"http://carky-app.azurewebsites.net/api/CarOwner/UploadCarPhotos?carId=1"];
     //responseData = [[NSMutableData alloc] init];
     //NSMutableDictionary *sendData = [[NSMutableDictionary alloc]init];
-    NSMutableURLRequest *request = [self makeHttpRequestWithUrl:@"/api/CarOwner/UploadCarPhotos?carId=1"];
+    NSMutableURLRequest *request = [self makeHttpRequestWithUrl:uri];
     request.HTTPMethod = @"POST";
     NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@",boundary];
     [request setValue:contentType forHTTPHeaderField: @"Content-Type"];
@@ -149,14 +185,9 @@
     // set Content-Type in HTTP header
     NSMutableData *body = [NSMutableData data];
     NSArray *imageNameArray = @[@"sidepic",@"frontpic",@"outsidepic",@"insidepic"];
-    UIImage *image = [UIImage imageNamed:@"side"];
-    UIImage *image1 = [UIImage imageNamed:@"side"];
-    UIImage *image2 = [UIImage imageNamed:@"side"];
-    UIImage *image3 = [UIImage imageNamed:@"side"];
-    photo_name = @[image,image1,image2,image3];
-    for (int i=0; i<photo_name.count; i++)
+    for (int i=0; i<imageList.count; i++)
     {
-        NSData *imageData = UIImageJPEGRepresentation([photo_name objectAtIndex:i],1);
+        NSData *imageData = UIImageJPEGRepresentation([imageList objectAtIndex:i],1);
         
         if (imageData)
         {

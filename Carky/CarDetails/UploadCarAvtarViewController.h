@@ -10,6 +10,7 @@
 #import "HeaderView.h"
 @interface UploadCarAvtarViewController : UIViewController
 @property (nonatomic, weak) IBOutlet HeaderView *headerView;
+@property (nonatomic, strong) NSString *carId;
 @property (nonatomic, weak) IBOutlet UIView *btnBackView;
 @property (nonatomic, weak) IBOutlet UIButton *sideBtn;
 @property (nonatomic, weak) IBOutlet UIButton *frontSideBtn;

@@ -399,7 +399,8 @@ numberOfRowsInComponent:(NSInteger)component
             [self hideActivityIndicator];
             if([response isKindOfClass:[NSDictionary class]]){
                 dispatch_async(dispatch_get_main_queue(), ^{
-                   NSLog(@"jsoon dict = %@", response);
+                    NSString *carID = response[@"CarType"][@"Id"];
+                    [self gotoCarAvtarUploadControllerWithCarId:carID];
                 });
             }
         }
@@ -426,8 +427,9 @@ numberOfRowsInComponent:(NSInteger)component
         [self displayAlertWithTitle:@"No internet connection" withMessage:@"Please check internet connection and try again"];
     }];
 }
--(void) gotoCarAvtarUploadController{
+-(void) gotoCarAvtarUploadControllerWithCarId:(NSString *)carId{
     UploadCarAvtarViewController *avtarController = [[UploadCarAvtarViewController alloc] initWithNibName:@"UploadCarAvtarViewController" bundle:nil];
+    avtarController.carId = carId;
     [self.navigationController pushViewController:avtarController animated:YES];
 }
 @end
