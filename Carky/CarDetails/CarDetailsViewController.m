@@ -52,10 +52,10 @@
 }
 -(void) viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];
-//    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"check"]) {
-//        carDetailsArray = [[NSUserDefaults standardUserDefaults] objectForKey:@"check"];
-//        return;
-//    }
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"check"]) {
+        carDetailsArray = [[NSUserDefaults standardUserDefaults] objectForKey:@"check"];
+        return;
+    }
     [self getAllCarType];
     //[self getTerms];
    
@@ -353,6 +353,8 @@ numberOfRowsInComponent:(NSInteger)component
 
 #pragma mark -
 - (IBAction)nextButtonAction:(UIButton *)sender{
+//    [self gotoCarAvtarUploadController];
+//    return;
     if (self.makeTxtFld.text.length<1 || self.modelTxtFld.text.length<1 || self.transmissionTxtFld.text.length<1 || self.yearTxtFld.text.length<1 || self.fuelTxtFld.text.length<1 || self.registrationTxtFld.text.length<1 || self.kmTxtFld.text.length<1 || self.carAddressTxtFld.text.length<1) {
         [self displayAlertWithTitle:@"" withMessage:@"All fields are mandatory"];
         return;
@@ -366,7 +368,25 @@ numberOfRowsInComponent:(NSInteger)component
 }
 -(void) makeRequestForAddCar:(NSDictionary *)dict{
     [self displayActivityIndicator];
-    NSDictionary *carType = @{@"Id":dict[@"Id"], @"Make":self.makeTxtFld.text,@"Model":self.modelTxtFld.text,@"Transmission":@"",@"Fuel":@"", @"Category":dict[@"Category"]};
+    
+    NSString *year = self.yearTxtFld.text;
+    NSArray *tempArray = [year componentsSeparatedByString:@" "];
+    if (tempArray.count<1) {
+        return;
+    }
+    NSString *trans = @"1";
+    NSString *fuel = @"1";
+    if ([self.transmissionTxtFld.text isEqualToString:@"Automatic"]) {
+        trans = @"2";
+    }
+    
+    if ([self.fuelTxtFld.text isEqualToString:@"Diesel"]) {
+        fuel = @"2";
+    }
+    else if ([self.fuelTxtFld.text isEqualToString:@"LPG"]){
+        fuel = @"3";
+    }
+    NSDictionary *carType = @{@"Id":dict[@"Id"], @"Make":self.makeTxtFld.text,@"Model":self.modelTxtFld.text,@"Transmission":trans,@"Fuel":fuel, @"Category":dict[@"Category"]};
     NSDictionary *postDict = @{@"CarType":carType, @"Year":self.yearTxtFld.text, @"Odometer":self.kmTxtFld.text, @"Address":self.carAddressTxtFld.text,@"Registration":self.registrationTxtFld.text};
     NetworkHandler *networkHandler = [[NetworkHandler alloc] init];
     [networkHandler makePostRequestWithUri:addOwnerCar parameters:postDict withCompletion:^(id response, NSHTTPURLResponse *urlResponse, NSError *error) {

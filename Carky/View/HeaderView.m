@@ -38,17 +38,18 @@
 #pragma mark -
 -(void) configuration{
     //add logo
-    self.logoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
+    self.logoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 20, 100, 20)];
+    self.logoImageView.image = [UIImage imageNamed:@"carky_logo.png"];
     self.logoImageView.backgroundColor = [UIColor lightGrayColor];
     self.logoImageView.center = CGPointMake(self.frame.size.width/2, 40);
     self.logoImageView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
-   // [self addSubview:self.logoImageView];
+    [self addSubview:self.logoImageView];
     //add menu button
-    self.menuButton = [self initializeButton:self.menuButton withImage:[UIImage imageNamed:@"home.png"] andFrame:CGRectMake(20, 25, 30, 20)];
+    self.menuButton = [self initializeButton:self.menuButton withImage:[UIImage imageNamed:@"home_icon.png"] andFrame:CGRectMake(20, 25, 24, 24)];
     [self.menuButton addTarget:self action:@selector(menuButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.menuButton];
     //add route button
-    self.routeButton = [self initializeButton:self.menuButton withImage:[UIImage imageNamed:@"home.png"] andFrame:CGRectMake(self.frame.size.width - 60, 25, 30, 20)];
+    self.routeButton = [self initializeButton:self.menuButton withImage:[UIImage imageNamed:@"route_icon.png"] andFrame:CGRectMake(self.frame.size.width - 44, 25, 24, 24)];
     [self.routeButton addTarget:self action:@selector(routeButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     self.routeButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
     [self addSubview:self.routeButton];

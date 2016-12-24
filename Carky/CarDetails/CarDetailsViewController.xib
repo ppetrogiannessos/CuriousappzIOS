@@ -54,7 +54,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S8y-C1-EL7">
                                     <rect key="frame" x="8" y="50" width="359" height="400"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home.png" translatesAutoresizingMaskIntoConstraints="NO" id="Q93-zg-QwX">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="make_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Q93-zg-QwX">
                                             <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="aOq-tr-cYU"/>
@@ -73,7 +73,7 @@
                                                 <outlet property="delegate" destination="-1" id="MAx-M8-3gW"/>
                                             </connections>
                                         </textField>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home.png" translatesAutoresizingMaskIntoConstraints="NO" id="dJ6-rE-01Q">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="model_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="dJ6-rE-01Q">
                                             <rect key="frame" x="184.5" y="0.0" width="40" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="RwC-ZG-afg"/>
@@ -104,7 +104,7 @@
                                                 <outlet property="delegate" destination="-1" id="hgc-gP-yxh"/>
                                             </connections>
                                         </textField>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home.png" translatesAutoresizingMaskIntoConstraints="NO" id="rZa-xW-6UB">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="transmission_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="rZa-xW-6UB">
                                             <rect key="frame" x="0.0" y="90" width="40" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="40" id="7Jm-yj-7hi"/>
@@ -123,7 +123,7 @@
                                                 <outlet property="delegate" destination="-1" id="Nr0-hN-DP6"/>
                                             </connections>
                                         </textField>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home.png" translatesAutoresizingMaskIntoConstraints="NO" id="oqS-ft-UuH">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="year_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="oqS-ft-UuH">
                                             <rect key="frame" x="184" y="90" width="40" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="40" id="l32-N1-tfL"/>
@@ -142,7 +142,7 @@
                                                 <outlet property="delegate" destination="-1" id="4Ke-wG-bFm"/>
                                             </connections>
                                         </textField>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home.png" translatesAutoresizingMaskIntoConstraints="NO" id="Hpl-qI-mEP">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fuel_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Hpl-qI-mEP">
                                             <rect key="frame" x="0.0" y="180" width="40" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="40" id="2Hp-LX-c8C"/>
@@ -161,7 +161,7 @@
                                                 <outlet property="delegate" destination="-1" id="lfc-j4-DXa"/>
                                             </connections>
                                         </textField>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ya5-nt-3ms">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="registration_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ya5-nt-3ms">
                                             <rect key="frame" x="185" y="180" width="40" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="dI0-cZ-mKh"/>
@@ -180,7 +180,7 @@
                                                 <outlet property="delegate" destination="-1" id="owF-wv-ype"/>
                                             </connections>
                                         </textField>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home.png" translatesAutoresizingMaskIntoConstraints="NO" id="qUo-IZ-f1g">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="km_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="qUo-IZ-f1g">
                                             <rect key="frame" x="0.0" y="270" width="40" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="FqA-0b-W4b"/>
@@ -199,7 +199,7 @@
                                                 <outlet property="delegate" destination="-1" id="I1x-RL-r4F"/>
                                             </connections>
                                         </textField>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home.png" translatesAutoresizingMaskIntoConstraints="NO" id="v03-S7-gDL">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car_address.png" translatesAutoresizingMaskIntoConstraints="NO" id="v03-S7-gDL">
                                             <rect key="frame" x="185" y="270" width="40" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="ijK-MF-lKh"/>
@@ -284,7 +284,7 @@
                         <constraint firstAttribute="height" constant="50" id="brg-aN-OeW"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                    <state key="normal" title="NEXT">
+                    <state key="normal" backgroundImage="next_button.png">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -310,6 +310,14 @@
         </view>
     </objects>
     <resources>
-        <image name="home.png" width="382" height="272"/>
+        <image name="car_address.png" width="39" height="39"/>
+        <image name="fuel_icon.png" width="39" height="39"/>
+        <image name="km_icon.png" width="39" height="39"/>
+        <image name="make_icon.png" width="39" height="39"/>
+        <image name="model_icon.png" width="39" height="39"/>
+        <image name="next_button.png" width="376" height="53"/>
+        <image name="registration_icon.png" width="39" height="39"/>
+        <image name="transmission_icon.png" width="39" height="39"/>
+        <image name="year_icon.png" width="39" height="39"/>
     </resources>
 </document>

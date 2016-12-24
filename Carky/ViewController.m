@@ -126,9 +126,9 @@
 - (IBAction)nextButtonAction:(UIButton *)sender {
 //        self.emailTxtFld.text = @"avinash@gmail.com";
 //        self.passwordTxtFld.text = @"qwerty";
-    //   [self displayVerficationControllerWithCode:@""];
-//        //[self getAuthenticationToken:[[NetworkHandler alloc] init]];
-       // return;
+//       [self displayVerficationControllerWithCode:@""];
+//    [self getAuthenticationToken:[[NetworkHandler alloc] init]];
+   //    return;
     if (self.nameTxtFld.text.length<1 || self.surnameTxtFld.text.length<1 || self.addressTxtFld.text.length < 1 || self.emailTxtFld.text.length < 1 || self.passwordTxtFld.text.length < 1 || self.confirmPasswordTxtFld.text.length < 1 || self.mobileNumberTxtFld.text.length < 1) {
         [self displayAlertWithTitle:@"" withMessage:@"All fields are mandatory"];
         return;
@@ -156,8 +156,8 @@
         }
         if (urlResponse.statusCode == 200) {
             NSLog(@"Send phone number verification request");
-            [self performSelector:@selector(getAuthenticationToken:) withObject:networkHandler afterDelay:1.0];
-            //[self getAuthenticationToken:networkHandler];
+            //[self performSelector:@selector(getAuthenticationToken:) withObject:networkHandler afterDelay:1.0];
+            [self getAuthenticationToken:networkHandler];
         }
         else{
             [self hideActivityIndicator];
@@ -192,11 +192,11 @@
                 NSString *accessToken = [NSString stringWithFormat:@"%@",response[@"access_token"]];
                 [[NSUserDefaults standardUserDefaults] setObject:accessToken forKey:KAppAuthenticationToken];
                 NSLog(@"access_token -  %@",accessToken);
-//                dispatch_async(dispatch_get_main_queue(), ^{
-//                    [self displayVerficationControllerWithCode:@""];
-//                });
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self displayVerficationControllerWithCode:@""];
+                });
                 
-                [self sendPhoneNumberVerificationRequest:networkHandler];
+               // [self sendPhoneNumberVerificationRequest:networkHandler];
             }
         }
         else{

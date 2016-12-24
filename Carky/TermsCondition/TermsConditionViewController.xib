@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -37,7 +36,7 @@
                         <constraint firstAttribute="height" constant="50" id="TU2-4K-8zD"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                    <state key="normal" title="NEXT">
+                    <state key="normal" backgroundImage="next_button.png">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
@@ -100,4 +99,7 @@
             <point key="canvasLocation" x="33.5" y="123.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="next_button.png" width="376" height="53"/>
+    </resources>
 </document>

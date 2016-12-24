@@ -7,7 +7,7 @@
 //
 
 #import "UploadCarAvtarViewController.h"
-
+#import "UIController.h"
 #import "TermsConditionViewController.h"
 #import "MediaSelectionController.h"
 #import "NetworkHandler.h"
@@ -67,6 +67,9 @@
 
 
 #pragma mark -
+-(void) makeHttpRequestForUploadCarImages:(NSArray *)carImageList{
+    
+}
 -(void) uploadPicService{
     [self displayActivityIndicator];
     // NSDictionary *postDict = @{@"Culture":@"sample string 1"};
@@ -118,7 +121,12 @@
  // Pass the selected object to the new view controller.
  }
  */
+#pragma mark -
 -(IBAction)nextButtonAction:(UIButton *)sender{
+    if (self.sideBtn.tag == 0 || self.frontSideBtn.tag == 0 || self.threeQuarterBtn.tag == 0 || self.interiorBtn == 0) {
+        [self displayAlertWithTitle:@"" withMessage:@"Upload image for all sections"];
+        return;
+    }
     //[self uploadPicService];
     [self gotoTermsConditionController];
 }
@@ -133,6 +141,7 @@
 -(IBAction)skipButtonAction:(UIButton *)sender{
     [self gotoTermsConditionController];
 }
+#pragma mark -
 -(void)displayImagePickerOption:(UIButton *)sender{
     
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"" message:@"Choose option for add new image" preferredStyle:UIAlertControllerStyleActionSheet];
@@ -162,7 +171,12 @@
     
     MediaSelectionController *mediaController = [MediaSelectionController mediaManagerWithController:self];
     [mediaController displayImagePickerWithSource:source withCompletionBlock:^(id response, NSError *error) {
+        if (sender.tag == 0) {
+            sender.tag = 1;
+            [[UIController sharedInstance] addBorderWithWidth:0.7 withColor:[UIColor lightGrayColor] withCornerRadious:2 toView:sender];
+        }
         [sender setBackgroundImage:response forState:UIControlStateNormal];
     }];
 }
+#pragma mark -
 @end
