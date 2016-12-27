@@ -228,11 +228,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carky/CarDetails/CarDetailsViewController.m"
-            timestampString = "504430115.002542"
+            timestampString = "504515063.548235"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "402"
-            endingLineNumber = "402"
+            startingLineNumber = "408"
+            endingLineNumber = "408"
             landmarkName = "-makeRequestForAddCar:"
             landmarkType = "7">
          </BreakpointContent>
@@ -244,11 +244,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carky/CarDetails/CarDetailsViewController.m"
-            timestampString = "504430161.023538"
+            timestampString = "504515063.548235"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "431"
-            endingLineNumber = "431"
+            startingLineNumber = "437"
+            endingLineNumber = "437"
             landmarkName = "-gotoCarAvtarUploadControllerWithCarId:"
             landmarkType = "7">
          </BreakpointContent>

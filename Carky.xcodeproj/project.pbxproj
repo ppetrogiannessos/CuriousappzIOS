@@ -30,6 +30,7 @@
 		FD45CD721E0E98F200BC4D64 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FD45CD691E0E98F200BC4D64 /* AFURLSessionManager.m */; };
 		FD45CD741E0ECEC300BC4D64 /* model_icon_test.png in Resources */ = {isa = PBXBuildFile; fileRef = FD45CD731E0ECEC300BC4D64 /* model_icon_test.png */; };
 		FD45CD761E1244AA00BC4D64 /* phoneicon.png in Resources */ = {isa = PBXBuildFile; fileRef = FD45CD751E1244AA00BC4D64 /* phoneicon.png */; };
+		FD45CD781E1246F100BC4D64 /* down_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FD45CD771E1246F100BC4D64 /* down_arrow.png */; };
 		FD511FF31E0BE9A500B12C7C /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = FD511FF21E0BE9A500B12C7C /* Utility.m */; };
 		FD511FF81E0BF3EF00B12C7C /* VerificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD511FF61E0BF3EF00B12C7C /* VerificationViewController.m */; };
 		FD511FF91E0BF3EF00B12C7C /* VerificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD511FF71E0BF3EF00B12C7C /* VerificationViewController.xib */; };
@@ -112,6 +113,7 @@
 		FD45CD691E0E98F200BC4D64 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 		FD45CD731E0ECEC300BC4D64 /* model_icon_test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = model_icon_test.png; path = Resources/model_icon_test.png; sourceTree = "<group>"; };
 		FD45CD751E1244AA00BC4D64 /* phoneicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = phoneicon.png; path = Resources/Images/phoneicon.png; sourceTree = "<group>"; };
+		FD45CD771E1246F100BC4D64 /* down_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = down_arrow.png; path = Resources/Images/down_arrow.png; sourceTree = "<group>"; };
 		FD511FF11E0BE9A500B12C7C /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utility.h; path = Utility/Utility.h; sourceTree = "<group>"; };
 		FD511FF21E0BE9A500B12C7C /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Utility.m; path = Utility/Utility.m; sourceTree = "<group>"; };
 		FD511FF51E0BF3EF00B12C7C /* VerificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerificationViewController.h; sourceTree = "<group>"; };
@@ -299,6 +301,7 @@
 				FD45CD481E0E4AC900BC4D64 /* make_icon.png */,
 				FD45CD541E0E4CDC00BC4D64 /* carky_logo.png */,
 				FD45CD751E1244AA00BC4D64 /* phoneicon.png */,
+				FD45CD771E1246F100BC4D64 /* down_arrow.png */,
 				FD5120FD1E0D3D9F00B12C7C /* Cars */,
 			);
 			name = Images;
@@ -533,6 +536,7 @@
 				FD45CD521E0E4AC900BC4D64 /* model_icon.png in Resources */,
 				FD5121051E0D3DAE00B12C7C /* side.png in Resources */,
 				FD45CD501E0E4AC900BC4D64 /* transmission_icon.png in Resources */,
+				FD45CD781E1246F100BC4D64 /* down_arrow.png in Resources */,
 				FD45CD551E0E4CDC00BC4D64 /* carky_logo.png in Resources */,
 				FDC62FF21E0B07CC002FF506 /* LaunchScreen.storyboard in Resources */,
 				FDC62FEF1E0B07CB002FF506 /* Assets.xcassets in Resources */,

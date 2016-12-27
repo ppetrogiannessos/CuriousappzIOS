@@ -62,7 +62,7 @@
                                             </constraints>
                                         </imageView>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="MAKE" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aLO-pb-SWT" customClass="CustomTextField">
-                                            <rect key="frame" x="45" y="10" width="129.5" height="30"/>
+                                            <rect key="frame" x="45" y="10" width="130" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="YqA-Fe-Nxo"/>
                                             </constraints>
@@ -74,14 +74,14 @@
                                             </connections>
                                         </textField>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="model_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="dJ6-rE-01Q">
-                                            <rect key="frame" x="184.5" y="0.0" width="40" height="40"/>
+                                            <rect key="frame" x="185" y="0.0" width="40" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="RwC-ZG-afg"/>
                                                 <constraint firstAttribute="width" constant="40" id="fn6-hN-sD5"/>
                                             </constraints>
                                         </imageView>
                                         <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="MODEL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fiM-5L-PqV" customClass="CustomTextField">
-                                            <rect key="frame" x="229.5" y="10" width="129.5" height="30"/>
+                                            <rect key="frame" x="230" y="10" width="129" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="dkQ-nM-Yhe"/>
                                             </constraints>
@@ -93,7 +93,7 @@
                                             </connections>
                                         </textField>
                                         <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="TRANSMISSION" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GUB-dn-QRC" customClass="CustomTextField">
-                                            <rect key="frame" x="45" y="100" width="129.5" height="30"/>
+                                            <rect key="frame" x="45" y="100" width="130" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="8Y1-uw-ehe"/>
                                             </constraints>
@@ -112,7 +112,7 @@
                                             </constraints>
                                         </imageView>
                                         <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="YEAR" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Unm-wj-CpB" customClass="CustomTextField">
-                                            <rect key="frame" x="229" y="100" width="129.5" height="30"/>
+                                            <rect key="frame" x="229" y="100" width="130" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="dhz-Mc-tGO"/>
                                             </constraints>
@@ -131,7 +131,7 @@
                                             </constraints>
                                         </imageView>
                                         <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="FUEL TYPE" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QlV-Bg-YP3" customClass="CustomTextField">
-                                            <rect key="frame" x="45" y="190" width="129.5" height="30"/>
+                                            <rect key="frame" x="45" y="190" width="130" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="BEt-s9-Sgq"/>
                                             </constraints>
@@ -150,7 +150,7 @@
                                             </constraints>
                                         </imageView>
                                         <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="REGISTRATION NO." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bgm-2e-6Ki" customClass="CustomTextField">
-                                            <rect key="frame" x="230" y="190" width="129.5" height="30"/>
+                                            <rect key="frame" x="230" y="190" width="130" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="Q56-6x-z5S"/>
                                             </constraints>
@@ -169,7 +169,7 @@
                                             </constraints>
                                         </imageView>
                                         <textField opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="KM" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w0z-W1-RQf" customClass="CustomTextField">
-                                            <rect key="frame" x="45" y="280" width="129.5" height="30"/>
+                                            <rect key="frame" x="45" y="280" width="130" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="100-vk-qPw"/>
                                             </constraints>
@@ -188,7 +188,7 @@
                                             </constraints>
                                         </imageView>
                                         <textField opaque="NO" clipsSubviews="YES" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CAR ADDRESS" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UBZ-RB-bvl" customClass="CustomTextField">
-                                            <rect key="frame" x="230" y="280" width="129.5" height="30"/>
+                                            <rect key="frame" x="230" y="280" width="130" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="WAk-08-P0I"/>
                                             </constraints>
@@ -310,14 +310,14 @@
         </view>
     </objects>
     <resources>
-        <image name="car_address.png" width="39" height="39"/>
-        <image name="fuel_icon.png" width="39" height="39"/>
-        <image name="km_icon.png" width="39" height="39"/>
-        <image name="make_icon.png" width="39" height="39"/>
-        <image name="model_icon.png" width="39" height="39"/>
-        <image name="next_button.png" width="376" height="53"/>
-        <image name="registration_icon.png" width="39" height="39"/>
-        <image name="transmission_icon.png" width="39" height="39"/>
-        <image name="year_icon.png" width="39" height="39"/>
+        <image name="car_address.png" width="66" height="66"/>
+        <image name="fuel_icon.png" width="67" height="66"/>
+        <image name="km_icon.png" width="66" height="66"/>
+        <image name="make_icon.png" width="68" height="71"/>
+        <image name="model_icon.png" width="68" height="68"/>
+        <image name="next_button.png" width="750" height="105"/>
+        <image name="registration_icon.png" width="66" height="66"/>
+        <image name="transmission_icon.png" width="67" height="67"/>
+        <image name="year_icon.png" width="67" height="67"/>
     </resources>
 </document>

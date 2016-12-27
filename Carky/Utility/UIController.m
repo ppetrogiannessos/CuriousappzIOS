@@ -58,4 +58,20 @@ static UIController *sharedInstance;
     }
     textField.leftViewMode = UITextFieldViewModeAlways;
 }
+-(void) addRightPaddingTOTextField:(UITextField *)textField withFrame:(CGRect)frame withBackgroundColor:(UIColor *)color withImage:(NSString *)imageName{
+    if (imageName == nil) {
+        NSLog(@"Add uiview");
+    }
+    else{
+        UIView *aview = [[UIView alloc] initWithFrame:frame];
+        aview.backgroundColor = [UIColor clearColor];
+        //NSLog(@"Add UIImage View");
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width-10, frame.size.height)];
+        imageView.image = [UIImage imageNamed:imageName];
+        imageView.contentMode = UIViewContentModeScaleAspectFit;
+        [aview addSubview:imageView];
+        textField.rightView = aview;
+    }
+    textField.rightViewMode = UITextFieldViewModeAlways;
+}
 @end

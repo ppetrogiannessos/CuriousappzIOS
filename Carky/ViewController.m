@@ -129,7 +129,7 @@
 - (IBAction)nextButtonAction:(UIButton *)sender {
 //       self.emailTxtFld.text = @"avinash@gmail.com";
 //        self.passwordTxtFld.text = @"qwerty";
-////      // [self displayVerficationControllerWithCode:@""];
+//       [self displayVerficationControllerWithCode:@""];
   //  [self getAuthenticationToken:[[NetworkHandler alloc] init]];
 //       return;
     if (self.nameTxtFld.text.length<1 || self.surnameTxtFld.text.length<1 || self.addressTxtFld.text.length < 1 || self.emailTxtFld.text.length < 1 || self.passwordTxtFld.text.length < 1 || self.confirmPasswordTxtFld.text.length < 1 || self.mobileNumberTxtFld.text.length < 1) {

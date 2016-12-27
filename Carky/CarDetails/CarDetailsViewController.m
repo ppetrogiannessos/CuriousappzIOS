@@ -33,6 +33,12 @@
     [[UIController sharedInstance] addBorderWithWidth:1.0f withColor:[UIColor lightGrayColor] withCornerRadious:20.0f toView:self.kmImageView];
     [[UIController sharedInstance] addBorderWithWidth:1.0f withColor:[UIColor lightGrayColor] withCornerRadious:20.0f toView:self.carAddressImageView];
     [[UIController sharedInstance] addBorderWithWidth:1.0f withColor:[UIColor lightGrayColor] withCornerRadious:20.0f toView:self.yearImageView];
+    //add arrow image
+    [[UIController sharedInstance] addRightPaddingTOTextField:self.makeTxtFld withFrame:CGRectMake(0, 0, 35, 30) withBackgroundColor:[UIColor clearColor] withImage:@"down_arrow.png"];
+    [[UIController sharedInstance] addRightPaddingTOTextField:self.modelTxtFld withFrame:CGRectMake(0, 0, 35, 30) withBackgroundColor:[UIColor clearColor] withImage:@"down_arrow.png"];
+    [[UIController sharedInstance] addRightPaddingTOTextField:self.transmissionTxtFld withFrame:CGRectMake(0, 0, 35, 30) withBackgroundColor:[UIColor clearColor] withImage:@"down_arrow.png"];
+    [[UIController sharedInstance] addRightPaddingTOTextField:self.yearTxtFld withFrame:CGRectMake(0, 0, 35, 30) withBackgroundColor:[UIColor clearColor] withImage:@"down_arrow.png"];
+    [[UIController sharedInstance] addRightPaddingTOTextField:self.fuelTxtFld withFrame:CGRectMake(0, 0, 35, 30) withBackgroundColor:[UIColor clearColor] withImage:@"down_arrow.png"];
 }
 
 - (void)didReceiveMemoryWarning {
