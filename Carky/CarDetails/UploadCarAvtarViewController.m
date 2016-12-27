@@ -67,8 +67,8 @@
 
 
 #pragma mark -
--(void) uploadCarImages{
-    NSArray *imageList = @[[UIImage imageNamed:@"side.png"],[UIImage imageNamed:@"FrontSide.png"],[UIImage imageNamed:@"ThreeQuaters.png"],[UIImage imageNamed:@"Interior.png"]];
+-(void) uploadCarImages:(NSArray *)imageList{
+   // NSArray *imageList = @[[UIImage imageNamed:@"side.png"],[UIImage imageNamed:@"FrontSide.png"],[UIImage imageNamed:@"ThreeQuaters.png"],[UIImage imageNamed:@"Interior.png"]];
     NetworkHandler *handler = [[NetworkHandler alloc] init];
     [handler makeRquestForUploadImages:imageList withUri:[NSString stringWithFormat:@"%@?carId=%@",uploadCarPhotos, self.carId] postData:@{@"carId":self.carId} withCompletionHandler:^(id response, NSHTTPURLResponse *urlResponse, NSError *error) {
         NSLog(@"resonse = %@", response);
@@ -127,12 +127,19 @@
  */
 #pragma mark -
 -(IBAction)nextButtonAction:(UIButton *)sender{
-    if (self.sideBtn.tag == 0 || self.frontSideBtn.tag == 0 || self.threeQuarterBtn.tag == 0 || self.interiorBtn == 0) {
-        [self displayAlertWithTitle:@"" withMessage:@"Upload image for all sections"];
-        return;
-    }
-    [self makeHttpRequestForUploadCarImages:@[self.sideBtn.currentBackgroundImage, self.frontSideBtn.currentBackgroundImage, self.threeQuarterBtn.currentBackgroundImage, self.interiorBtn.currentBackgroundImage]];
+//    if (self.sideBtn.tag == 0 || self.frontSideBtn.tag == 0 || self.threeQuarterBtn.tag == 0 || self.interiorBtn == 0) {
+//        [self displayAlertWithTitle:@"" withMessage:@"Upload image for all sections"];
+//        return;
+//    }
+//    [self uploadCarImages:@[self.sideBtn.currentBackgroundImage, self.frontSideBtn.currentBackgroundImage, self.threeQuarterBtn.currentBackgroundImage, self.interiorBtn.currentBackgroundImage]];
+    
+    UIImage *image = [UIImage imageNamed:@"model_icon_test.png"];
+   [self makeHttpRequestForUploadCarImages:@[image, image, image, image]];
+   // [self uploadCarImages:@[image, image, image, image]];
+    
+    //[self makeHttpRequestForUploadCarImages:@[self.sideBtn.currentBackgroundImage, self.frontSideBtn.currentBackgroundImage, self.threeQuarterBtn.currentBackgroundImage, self.interiorBtn.currentBackgroundImage]];
     //[self gotoTermsConditionController];
+   // [self uploadImages];
 }
 -(void) gotoTermsConditionController{
     TermsConditionViewController *termsController = [[TermsConditionViewController alloc] initWithNibName:@"TermsConditionViewController" bundle:nil];
@@ -183,4 +190,48 @@
     }];
 }
 #pragma mark -
+-(void) uploadImages{
+    NSDictionary *headers = @{ @"content-type": @"multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW",@"authorization": [NSString stringWithFormat:@"Bearer %@",[[NSUserDefaults standardUserDefaults] objectForKey:KAppAuthenticationToken]],@"cache-control": @"no-cache",@"postman-token": @"18484b99-1932-6a8f-e6e7-7f6b8e64e1f9" };
+    NSArray *parameters = @[ @{ @"name": @"sidepic", @"fileName": @"model_icon_test.png" },@{ @"name": @"frontpic", @"fileName": @"model_icon_test.png" },@{ @"name": @"outsidepic", @"fileName": @"model_icon_test.png" },@{ @"name": @"insidepic", @"fileName": @"model_icon_test.png" } ];
+   
+    NSString *boundary = @"----WebKitFormBoundary7MA4YWxkTrZu0gW";
+    NSError *error;
+    NSMutableString *body = [NSMutableString string];
+   // NSString *s = [[NSBundle mainBundle] pathForResource:@"model_icon_test" ofType:@"png"];
+    NSURL * l = [[NSBundle mainBundle] URLForResource:@"model_icon_test" withExtension:@"png"];
+    for (NSDictionary *param in parameters) {
+        [body appendFormat:@"--%@\r\n", boundary];
+        if (param[@"fileName"]) {
+            [body appendFormat:@"Content-Disposition:form-data; name=\"%@\"; filename=\"%@\"\r\n", param[@"name"], param[@"fileName"]];
+            [body appendFormat:@"Content-Type: %@\r\n\r\n", headers[@"content-type"]];
+            //[body appendFormat:@"%@", [NSString stringWithContentsOfFile:param[@"fileName"] encoding:NSUTF8StringEncoding error:&error]];
+            //[body appendFormat:@"%@", [NSString stringWithContentsOfFile:s encoding:NSUTF8StringEncoding error:&error]];
+            [body appendFormat:@"%@", [NSString stringWithContentsOfURL:l encoding:NSUTF8StringEncoding error:&error]];
+            if (error) {
+                NSLog(@"error = %@", error);
+            }
+        } else {
+            [body appendFormat:@"Content-Disposition:form-data; name=\"%@\"\r\n\r\n", param[@"name"]];
+            [body appendFormat:@"%@", param[@"value"]];
+        }
+    }
+    [body appendFormat:@"\r\n--%@--\r\n", boundary];
+    NSData *postData = [body dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://carky-app.azurewebsites.net/api/CarOwner/UploadCarPhotos?carId=%@",self.carId]] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10.0];
+    [request setHTTPMethod:@"POST"];
+    [request setAllHTTPHeaderFields:headers];
+    [request setHTTPBody:postData];
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (error) {
+            NSLog(@"%@", error);
+        } else {
+            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+            NSLog(@"%@", httpResponse);
+        }
+    }];
+    [dataTask resume];
+}
 @end

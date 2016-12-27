@@ -537,7 +537,8 @@ forHTTPHeaderField:(NSString *)field
 #pragma mark -
 
 static NSString * AFCreateMultipartFormBoundary() {
-    return [NSString stringWithFormat:@"Boundary+%08X%08X", arc4random(), arc4random()];
+    //return [NSString stringWithFormat:@"Boundary+%08X%08X", arc4random(), arc4random()];
+    return @"-------------------------0xKhTmLbOuNdArY";
 }
 
 static NSString * const kAFMultipartFormCRLF = @"\r\n";
@@ -772,7 +773,8 @@ NSTimeInterval const kAFUploadStream3GSuggestedDelay = 0.2;
     [self.bodyStream setInitialAndFinalBoundaries];
     [self.request setHTTPBodyStream:self.bodyStream];
 
-    [self.request setValue:[NSString stringWithFormat:@"multipart/form-data; boundary=%@", self.boundary] forHTTPHeaderField:@"Content-Type"];
+   // [self.request setValue:[NSString stringWithFormat:@"multipart/form-data; boundary=%@", self.boundary] forHTTPHeaderField:@"Content-Type"];
+    [self.request setValue:[NSString stringWithFormat:@"false"] forHTTPHeaderField:@"Content-Type"];
     [self.request setValue:[NSString stringWithFormat:@"%llu", [self.bodyStream contentLength]] forHTTPHeaderField:@"Content-Length"];
 
     return self.request;

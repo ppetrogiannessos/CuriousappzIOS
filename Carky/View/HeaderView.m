@@ -38,9 +38,10 @@
 #pragma mark -
 -(void) configuration{
     //add logo
-    self.logoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 20, 100, 20)];
+    self.logoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 20, 100, 19)];
     self.logoImageView.image = [UIImage imageNamed:@"carky_logo.png"];
-    self.logoImageView.backgroundColor = [UIColor lightGrayColor];
+    self.logoImageView.backgroundColor = [UIColor clearColor];
+    self.logoImageView.contentMode = UIViewContentModeScaleAspectFill;
     self.logoImageView.center = CGPointMake(self.frame.size.width/2, 40);
     self.logoImageView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
     [self addSubview:self.logoImageView];

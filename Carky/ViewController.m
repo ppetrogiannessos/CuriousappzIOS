@@ -11,6 +11,7 @@
 #import "VerificationViewController.h"
 #import "NetworkHandler.h"
 #import "CAActivityIndicatorView.h"
+#import "UIController.h"
 
 @interface ViewController ()
 {
@@ -23,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [[UIController sharedInstance] addLeftPaddingtoTextField:self.mobileNumberTxtFld withFrame:CGRectMake(0, 0, 35, 30) withBackgroundColor:[UIColor clearColor] withImage:@"phoneicon.png"];
 }
 
 
@@ -36,6 +38,7 @@
     [self.headerView updateViewIndicator:1];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyboardChangeFrameNotification:) name:UIKeyboardWillChangeFrameNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyboardWillHideNotification:) name:UIKeyboardWillHideNotification object:nil];
+
 }
 
 -(void) viewWillDisappear:(BOOL)animated{
@@ -124,11 +127,10 @@
 }
 #pragma mark - IBAction
 - (IBAction)nextButtonAction:(UIButton *)sender {
-       self.emailTxtFld.text = @"avinash@gmail.com";
-        self.passwordTxtFld.text = @"qwerty";
+//       self.emailTxtFld.text = @"avinash@gmail.com";
+//        self.passwordTxtFld.text = @"qwerty";
 ////      // [self displayVerficationControllerWithCode:@""];
-    [self getAuthenticationToken:[[NetworkHandler alloc] init]];
-//    [self uploadPicService];
+  //  [self getAuthenticationToken:[[NetworkHandler alloc] init]];
 //       return;
     if (self.nameTxtFld.text.length<1 || self.surnameTxtFld.text.length<1 || self.addressTxtFld.text.length < 1 || self.emailTxtFld.text.length < 1 || self.passwordTxtFld.text.length < 1 || self.confirmPasswordTxtFld.text.length < 1 || self.mobileNumberTxtFld.text.length < 1) {
         [self displayAlertWithTitle:@"" withMessage:@"All fields are mandatory"];
@@ -344,56 +346,4 @@
     verificationController.verificationCode = code;
     [self.navigationController pushViewController:verificationController animated:YES];
 }
-#pragma mark -
--(void) uploadCarImages{
-    NSArray *imageList = @[[UIImage imageNamed:@"side.png"],[UIImage imageNamed:@"FrontSide.png"],[UIImage imageNamed:@"ThreeQuaters.png"],[UIImage imageNamed:@"Interior.png"]];
-    NetworkHandler *handler = [[NetworkHandler alloc] init];
-    [handler makeRquestForUploadImages:imageList withUri:uploadCarPhotos postData:@{@"carId":@"2"} withCompletionHandler:^(id response, NSHTTPURLResponse *urlResponse, NSError *error) {
-        NSLog(@"resonse = %@", response);
-        NSLog(@"Error = %@", error);
-    } withNetworkFailureBlock:^(NSString *message) {
-        NSLog(@"network error");
-    }];
-}
-//-(void) uploadPicService{
-//    [self displayActivityIndicator];
-//    // NSDictionary *postDict = @{@"Culture":@"sample string 1"};
-//    NetworkHandler *networkHandler = [[NetworkHandler alloc] init];
-//    [networkHandler addUserPostWithNamewithCompletion:^(id response, NSHTTPURLResponse *urlResponse, NSError *error) {
-//        if (error) {
-//            [self hideActivityIndicator];
-//            [self displayAlertWithTitle:@"Error" withMessage:error.localizedDescription];
-//            return ;
-//        }
-//        if (urlResponse.statusCode == 200) {
-//            
-//            dispatch_async(dispatch_get_main_queue(), ^{
-//                [self hideActivityIndicator];
-//                if ([response isKindOfClass:[NSArray class]]){
-//                    //carDetailsArray = [NSArray arrayWithArray:response];
-//                }
-//                else{
-//                    [self displayAlertWithTitle:@"Error" withMessage:@"Please try again"];
-//                }
-//            });
-//        }
-//        else{
-//            NSLog(@"Display error message");
-//            dispatch_async(dispatch_get_main_queue(), ^{
-//                [self hideActivityIndicator];
-//                if([response isKindOfClass:[NSDictionary class]]){
-//                    if (response[@"Message"]) {
-//                        [self displayAlertWithTitle:@"Error" withMessage:response[@"Message"]];
-//                    }
-//                }
-//                else{
-//                    [self displayAlertWithTitle:@"Error" withMessage:@"Please try again"];
-//                }
-//            });
-//        }
-//        
-//    }];
-//    
-//}
-
 @end

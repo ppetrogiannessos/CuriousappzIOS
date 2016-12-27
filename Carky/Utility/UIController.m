@@ -47,11 +47,14 @@ static UIController *sharedInstance;
         NSLog(@"Add uiview");
     }
     else{
+        UIView *aview = [[UIView alloc] initWithFrame:frame];
+        aview.backgroundColor = [UIColor clearColor];
         //NSLog(@"Add UIImage View");
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width-10, frame.size.height)];
         imageView.image = [UIImage imageNamed:imageName];
         imageView.contentMode = UIViewContentModeScaleAspectFit;
-        textField.leftView = imageView;
+        [aview addSubview:imageView];
+        textField.leftView = aview;
     }
     textField.leftViewMode = UITextFieldViewModeAlways;
 }

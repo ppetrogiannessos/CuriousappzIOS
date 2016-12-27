@@ -353,7 +353,7 @@ numberOfRowsInComponent:(NSInteger)component
 
 #pragma mark -
 - (IBAction)nextButtonAction:(UIButton *)sender{
-//    [self gotoCarAvtarUploadController];
+//    [self gotoCarAvtarUploadControllerWithCarId:@"16"];
 //    return;
     if (self.makeTxtFld.text.length<1 || self.modelTxtFld.text.length<1 || self.transmissionTxtFld.text.length<1 || self.yearTxtFld.text.length<1 || self.fuelTxtFld.text.length<1 || self.registrationTxtFld.text.length<1 || self.kmTxtFld.text.length<1 || self.carAddressTxtFld.text.length<1) {
         [self displayAlertWithTitle:@"" withMessage:@"All fields are mandatory"];
@@ -399,7 +399,7 @@ numberOfRowsInComponent:(NSInteger)component
             [self hideActivityIndicator];
             if([response isKindOfClass:[NSDictionary class]]){
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    NSString *carID = response[@"CarType"][@"Id"];
+                    NSString *carID = response[@"Id"];
                     [self gotoCarAvtarUploadControllerWithCarId:carID];
                 });
             }
